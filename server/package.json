@@ -1,0 +1,26 @@
+{
+  "name": "travel-diary-server",
+  "version": "1.0.0",
+  "description": "This for handling Travel Diary Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "If you see this, your program run correctly"
+  },
+  "author": "Zed Trueblood",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dateformat": "^5.0.3",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mysql2": "^2.3.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.17.0",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,35 @@
+.navWrapper {
+  padding: 30px 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 20px 5px gray;
+}
+
+.navWrapper > img {
+  height: 75px;
+  cursor: pointer;
+}
+
+.profileWrapper {
+  display: inline-block;
+  position: relative;
+  height: 75px;
+  width: 75px;
+  overflow: hidden;
+  cursor: pointer;
+  border: solid 3px #2e86de;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.profileWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}

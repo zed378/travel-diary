@@ -1,0 +1,496 @@
+.dropWrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+}
+
+.dropdown {
+  width: 10%;
+  background: white;
+  position: absolute;
+  top: 190px;
+  right: 150px;
+  z-index: 99;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0 0 5px 1px gray;
+}
+
+.triangle {
+  position: absolute;
+  top: -35px;
+  right: 15px;
+  height: 45px;
+  width: 45px;
+}
+
+hr {
+  border: solid 1px #a8a8a8;
+}
+
+.menuOption {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 1rem 1rem;
+  cursor: pointer;
+}
+
+.menuOption:hover {
+  background: rgb(255, 185, 185);
+}
+
+.menuOption > p {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.menuOption > img {
+  height: 2.5rem;
+}
+
+@media only screen and (max-width: 1440px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 15%;
+    background: white;
+    position: absolute;
+    top: 145px;
+    right: 62.5px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    height: 45px;
+    width: 45px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 15%;
+    background: white;
+    position: absolute;
+    top: 145px;
+    right: 40px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    height: 45px;
+    width: 45px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 17.5%;
+    background: white;
+    position: absolute;
+    top: 130px;
+    right: 62.5px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -35px;
+    right: 15px;
+    height: 45px;
+    width: 45px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 20%;
+    background: white;
+    position: absolute;
+    top: 112.5px;
+    right: 42.5px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -25px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 22.5%;
+    background: white;
+    position: absolute;
+    top: 107.5px;
+    right: 45px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -25px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 30%;
+    background: white;
+    position: absolute;
+    top: 105px;
+    right: 32.5px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 32.5%;
+    background: white;
+    position: absolute;
+    top: 102.5px;
+    right: 35px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -22.5px;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .dropWrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .dropdown {
+    width: 42.5%;
+    background: white;
+    position: absolute;
+    top: 90px;
+    right: 35px;
+    z-index: 99;
+    padding: 0.5rem 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+  }
+
+  .triangle {
+    position: absolute;
+    top: -22.5px;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+  }
+
+  hr {
+    border: solid 1px #a8a8a8;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+  .menuOption > p {
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
+
+  .menuOption > img {
+    height: 1.75rem;
+  }
+}

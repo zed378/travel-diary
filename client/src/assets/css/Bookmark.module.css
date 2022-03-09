@@ -1,0 +1,17 @@
+.bookmarkContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 75px;
+}
+
+.bookmarkContainer > h1 {
+  margin: 0 0 3rem 0;
+  font-size: 2.5rem;
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5%;
+}

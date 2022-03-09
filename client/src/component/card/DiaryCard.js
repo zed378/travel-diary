@@ -1,4 +1,6 @@
 // import package
+import { useState, useParams } from "react";
+import { useNavigate } from "react-router-dom";
 
 // import assets
 import thumb from "../../assets/img/thumb.jpg";
@@ -7,17 +9,25 @@ import bookmarked from "../../assets/img/bookmarked.svg";
 import cssModules from "../../assets/css/Home.module.css";
 
 function DiaryCard() {
+  let navigate = useNavigate();
+
   return (
     <div className={cssModules.cardContent}>
       <div className={cssModules.bookmark}>
         <img src={bookmark} alt="Bookmark" />
       </div>
 
-      <div className={cssModules.thumbnail}>
+      <div
+        className={cssModules.thumbnail}
+        onClick={() => navigate("/detail-diary")}
+      >
         <img src={thumb} alt="Preview" />
       </div>
 
-      <div className={cssModules.cardDesc}>
+      <div
+        className={cssModules.cardDesc}
+        onClick={() => navigate("/detail-diary")}
+      >
         <h2>Bersemayam di tanah Dewata</h2>
         <p>29 July 2020, Cipto</p>
 

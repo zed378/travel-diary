@@ -10,7 +10,7 @@ import Nav from "./component/nav/Nav";
 import NavLog from "./component/nav/NavLog";
 
 // import pages
-import { Home } from "./pages/";
+import { Home, Profile, Bookmark, DetailDiary } from "./pages/";
 import PrivateRoute from "./context/PrivateRoute";
 
 // import config
@@ -31,6 +31,11 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<PrivateRoute />}>
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/bookmark" element={<Bookmark />} />
+          <Route exact path="/detail-diary" element={<DetailDiary />} />
+        </Route>
       </Routes>
     </Router>
   );

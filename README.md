@@ -1,6 +1,6 @@
-# travel-diary
+# Travel Diary
 
-This project created for us that want to capture the moment and eternalize using phrase.
+This project created for us that want to capture and eternalize the moment using words and phrase.
 
 ## Optimize Screen
 

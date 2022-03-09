@@ -1,0 +1,97 @@
+.diaryContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 125px;
+}
+.diaryContainer > h1 {
+  margin: 0 0 1rem 0;
+  font-size: 3rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.infoDate {
+  color: #3b97d3;
+  font-size: 1.5rem;
+  font-family: avenirs;
+  margin: 0;
+}
+
+.infoUser {
+  font-size: 1.5rem;
+  font-family: avenirs;
+  margin: 0;
+}
+
+.imgContainer {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  margin-bottom: 3rem;
+}
+
+.imgContainer > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.contentText {
+  font-family: avenirs;
+}
+
+.contentText > p {
+  font-size: 1.75rem;
+  text-align: justify;
+  color: #505050;
+  margin-bottom: 3rem;
+}
+
+.contentText > h1 {
+  font-size: 3rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.contentText > h2 {
+  font-size: 2.75rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.contentText > h3 {
+  font-size: 2.5rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.contentText > h4 {
+  font-size: 2.25rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.contentText > h5 {
+  font-size: 2.15rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+.contentText > h6 {
+  font-size: 2rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}

@@ -39,6 +39,6 @@ router.delete("/post/:id", auth, delPost);
 router.patch("/user/:id", auth, profileImg("photo"), editUser);
 
 // define bookmark routes
-router.post("/mark/:postId", auth, setMark);
+router.get("/mark/:postId", auth, setMark);
 
 module.exports = router;

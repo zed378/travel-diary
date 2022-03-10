@@ -21,7 +21,7 @@ const {
 const { editUser } = require("../controllers/user");
 
 // import bookmark controller
-const { setMark, editMark } = require("../controllers/bookmark");
+const { setMark } = require("../controllers/bookmark");
 
 // define auth routes
 router.post("/register", register);
@@ -40,6 +40,5 @@ router.patch("/user/:id", auth, profileImg("photo"), editUser);
 
 // define bookmark routes
 router.post("/mark/:postId", auth, setMark);
-router.patch("/mark/:postId/:val", auth, editMark);
 
 module.exports = router;

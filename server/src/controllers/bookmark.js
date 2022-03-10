@@ -5,39 +5,42 @@ exports.setMark = async (req, res) => {
   try {
     const { postId } = req.params;
 
-    await bookmark.create({
-      userId: req.user.id,
-      postId: postId,
-      isMark: 1,
-    });
-
-    res.send({
-      status: "Success",
-      message: "Success bookmarked diary",
-    });
-  } catch (error) {
-    res.send({
-      status: "Failed",
-      message: "Server Error",
-    });
-  }
-};
-
-exports.editMark = async (req, res) => {
-  try {
-    const { postId, val } = req.params;
-
-    await bookmark.update(
-      {
-        isMark: val,
+    const dataExist = await bookmark.findOne({
+      where: {
+        userId: req.user.id,
+        postId,
       },
-      { where: { postId } }
-    );
-
-    res.send({
-      status: "Success",
-      message: "Success update mark diary",
     });
+
+    if (dataExist) {
+      if (dataExist.isMark === 1) {
+        await bookmark.update(
+          { isMark: 0 },
+          { where: { userId: req.user.id, postId } }
+        );
+      } else {
+        await bookmark.update(
+          { isMark: 1 },
+          { where: { userId: req.user.id, postId } }
+        );
+      }
+
+      res.send({
+        status: "Success",
+        message: "Success update mark diary",
+      });
+    } else {
+      await bookmark.create({
+        userId: req.user.id,
+        postId,
+        isMark: 1,
+      });
+
+      res.send({
+        status: "Success",
+        message: "Success bookmarked diary",
+      });
+    }
   } catch (error) {
     res.send({
       status: "Failed",

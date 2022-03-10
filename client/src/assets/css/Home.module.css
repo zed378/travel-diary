@@ -149,6 +149,7 @@
   margin: 0;
   font-size: 1rem;
   font-family: roboto;
+  font-weight: 400;
   color: #6c6c6c;
   overflow: hidden;
   text-overflow: ellipsis;

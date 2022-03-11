@@ -66,6 +66,7 @@ function Nav() {
             <button
               className={cssModules.btnLog}
               onClick={() => dispatch({ type: "logShow" })}
+              id="loginbutton"
             >
               Login
             </button>

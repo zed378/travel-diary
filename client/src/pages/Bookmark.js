@@ -1,7 +1,6 @@
 // import package
 
 // import component
-import DiaryCard from "../component/card/DiaryCard";
 
 // import assets
 import cssModules from "../assets/css/Bookmark.module.css";
@@ -13,12 +12,7 @@ function Bookmark() {
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        <DiaryCard />
-        <DiaryCard />
-        <DiaryCard />
-        <DiaryCard />
-        <DiaryCard />
-        <DiaryCard />
+
         {/* end of card */}
       </div>
     </div>

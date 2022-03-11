@@ -95,3 +95,19 @@
   text-align: justify;
   margin-bottom: 3rem;
 }
+
+.backBtn {
+  background: #3b97d3;
+  color: white;
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-family: avenirs;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

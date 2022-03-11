@@ -1,57 +1,63 @@
 // import package
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import dateFormat, { masks } from "dateformat";
+import DOMPurify from "dompurify";
 
 // import assets
-import thumb from "../assets/img/thumb.jpg";
 import cssModules from "../assets/css/DetailDiary.module.css";
 
+// import config
+import { API } from "../config/api";
+
 function DetailDiary() {
+  let navigate = useNavigate();
+  const { id } = useParams();
+  const [diary, setDiary] = useState([]);
+
+  const getDiary = async () => {
+    try {
+      const response = await API.get(`/post/${id}`);
+
+      // setDiary(response.data.data);
+      setDiary({
+        title: response.data.data.title,
+        thumbnail: response.data.data.thumbnail,
+        content: response.data.data.content,
+        createdAt: response.data.data.createdAt,
+        name: response.data.data.user.name,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getDiary();
+    console.log(diary);
+  }, []);
+
   return (
     <div className={cssModules.diaryContainer}>
-      <h1>Bersemayam di tanah Dewata</h1>
+      <h1>{diary.title}</h1>
       <div className={cssModules.info}>
-        <p className={cssModules.infoDate}>17 October 2020</p>
-        <p className={cssModules.infoUser}>Zed Trueblood</p>
+        <p className={cssModules.infoDate}>
+          {" "}
+          {dateFormat(diary.createdAt, "dddd, d mmmm, yyyy")}
+        </p>
+        <p className={cssModules.infoUser}>{diary.name}</p>
       </div>
-
       <div className={cssModules.imgContainer}>
-        <img src={thumb} alt="Thumbnail" />
+        <img src={diary.thumbnail} alt="Thumbnail" />
       </div>
-
-      <div className={cssModules.contentText}>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <h2>Bersemayam di tanah Dewata Ke dua</h2>
-        <p>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur, from a Lorem Ipsum passage, and going
-          through the cites of the word in classical literature, discovered the
-          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
-          Evil) by Cicero, written in 45 BC. This book is a treatise on the
-          theory of ethics, very popular during the Renaissance. The first line
-          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-          section 1.10.32.
-        </p>
-        <p>
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-          below for those interested. Sections 1.10.32 and 1.10.33 from "de
-          Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-          exact original form, accompanied by English versions from the 1914
-          translation by H. Rackham.
-        </p>
-      </div>
+      <div
+        className={cssModules.contentText}
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(diary.content) }}
+      ></div>
+      <button className={cssModules.backBtn} onClick={() => navigate("/")}>
+        {" "}
+        &larr; Back
+      </button>
     </div>
   );
 }

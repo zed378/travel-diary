@@ -40,6 +40,8 @@ function AddDiary() {
         e.target.type === "file" ? e.target.files : e.target.value,
     });
 
+    console.log(form.title);
+
     if (e.target.type === "file") {
       let url = URL.createObjectURL(e.target.files[0]);
       setPreview(url);
@@ -82,6 +84,12 @@ function AddDiary() {
         setFail(false);
       }, 3000);
     }
+  };
+
+  const handleEditorChange = (event, editor) => {
+    const data = editor.getData();
+    setForm({ ...form, content: data });
+    console.log(form.content);
   };
 
   return (
@@ -160,10 +168,7 @@ function AddDiary() {
               // You can store the "editor" and use when it is needed.
               console.log("Editor is ready to use!", editor);
             }}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              setForm({ content: data });
-            }}
+            onChange={handleEditorChange}
           />
 
           <button type="submit" onClick={handleSubmit}>

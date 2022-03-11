@@ -62,7 +62,7 @@ function App() {
         <Route exact path="/" element={<PrivateRoute />}>
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/bookmark" element={<Bookmark />} />
-          <Route exact path="/detail-diary" element={<DetailDiary />} />
+          <Route exact path="/detail-diary/:id" element={<DetailDiary />} />
           <Route exact path="/write" element={<AddDiary />} />
         </Route>
       </Routes>

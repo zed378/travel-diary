@@ -1,5 +1,5 @@
 // import package
-import { useState, useParams, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import dateFormat, { masks } from "dateformat";
 import DOMPurify from "dompurify";
@@ -15,6 +15,9 @@ import { API } from "../../config/api";
 
 function DiaryCard({ item, click }) {
   let navigate = useNavigate();
+  const logTrigger = () => {
+    document.getElementById("loginbutton").click();
+  };
   const [state] = useContext(UserContext);
 
   const [marked, setMarked] = useState([]);
@@ -46,7 +49,16 @@ function DiaryCard({ item, click }) {
 
   return (
     <div className={cssModules.cardContent}>
-      <div className={cssModules.bookmark} onClick={() => setMark(item.id)}>
+      <div
+        className={cssModules.bookmark}
+        onClick={() => {
+          if (state.isLogin) {
+            setMark(item.id);
+          } else {
+            logTrigger();
+          }
+        }}
+      >
         {marked === null || marked.isMark === 0 ? (
           <img src={bookmark} alt="Bookmark" />
         ) : marked !== null || marked.isMark === 1 ? (
@@ -58,14 +70,14 @@ function DiaryCard({ item, click }) {
 
       <div
         className={cssModules.thumbnail}
-        onClick={() => navigate("/detail-diary")}
+        onClick={() => navigate(`/detail-diary/${item.id}`)}
       >
         <img src={item.thumbnail} alt="Preview" />
       </div>
 
       <div
         className={cssModules.cardDesc}
-        onClick={() => navigate("/detail-diary")}
+        onClick={() => navigate(`/detail-diary/${item.id}`)}
       >
         <h2>{item.title}</h2>
         <p>

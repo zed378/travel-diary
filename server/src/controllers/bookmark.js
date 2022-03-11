@@ -51,8 +51,9 @@ exports.setMark = async (req, res) => {
 
 exports.getAllMark = async (req, res) => {
   try {
+    const { id } = req.params;
     let data = await bookmark.findAll({
-      where: { userId: req.user.id, isMark: 1 },
+      where: { userId: id, isMark: 1 },
 
       include: [
         {
@@ -61,6 +62,8 @@ exports.getAllMark = async (req, res) => {
           attributes: { exclude: ["updatedAt"] },
         },
       ],
+
+      attributes: { exclude: ["updatedAt", "createdAt"] },
     });
 
     data = JSON.parse(JSON.stringify(data));

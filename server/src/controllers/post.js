@@ -88,13 +88,23 @@ exports.getPost = async (req, res) => {
 
     let data = await post.findOne({
       where: { id },
-      include: {
-        model: bookmark,
-        as: "mark",
-        attributes: {
-          exclude: ["id", "createdAt", "updatedAt"],
+
+      include: [
+        {
+          model: user,
+          as: "user",
+          attributes: {
+            exclude: [
+              "email",
+              "password",
+              "photo",
+              "phone",
+              "createdAt",
+              "updatedAt",
+            ],
+          },
         },
-      },
+      ],
 
       attributes: {
         exclude: ["updatedAt"],

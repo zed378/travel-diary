@@ -43,7 +43,7 @@ router.patch("/user/:id", auth, profileImg("photo"), editUser);
 
 // define bookmark routes
 router.get("/mark/:postId", auth, setMark);
-router.get("/marks", auth, getAllMark);
+router.get("/marks/:id", auth, getAllMark);
 router.get("/getmark/:userId/:postId", auth, getMark);
 
 module.exports = router;

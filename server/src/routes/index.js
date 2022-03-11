@@ -18,7 +18,7 @@ const {
 } = require("../controllers/post");
 
 // import user controller
-const { editUser } = require("../controllers/user");
+const { editUser, getUser } = require("../controllers/user");
 
 // import bookmark controller
 const { setMark } = require("../controllers/bookmark");
@@ -36,6 +36,7 @@ router.patch("/post/:id", auth, postImg("thumbnail"), editPost);
 router.delete("/post/:id", auth, delPost);
 
 // define post routes
+router.get("/user/:id", getUser);
 router.patch("/user/:id", auth, profileImg("photo"), editUser);
 
 // define bookmark routes

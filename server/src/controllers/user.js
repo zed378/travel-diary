@@ -5,6 +5,32 @@ const { user } = require("../../models");
 const fs = require("fs");
 const path = require("path");
 
+exports.getUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    let find = await user.findOne({
+      where: { id },
+
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"],
+      },
+    });
+
+    find.photo = process.env.PHOTO_PATH + find.photo;
+
+    res.send({
+      status: "Success",
+      data: find,
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
 exports.editUser = async (req, res) => {
   try {
     const { id } = req.params;

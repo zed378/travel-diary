@@ -97,7 +97,7 @@ exports.getPost = async (req, res) => {
       },
 
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["updatedAt"],
       },
     });
 

@@ -50,9 +50,6 @@ exports.getPosts = async (req, res) => {
         {
           model: bookmark,
           as: "mark",
-          // where: {
-          //   userId: req.user.id,
-          // },
           attributes: {
             exclude: ["id", "createdAt", "updatedAt"],
           },

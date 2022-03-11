@@ -1,5 +1,5 @@
 // import model
-const { bookmark } = require("../../models");
+const { bookmark, post } = require("../../models");
 
 exports.setMark = async (req, res) => {
   try {
@@ -41,6 +41,41 @@ exports.setMark = async (req, res) => {
         message: "Success bookmarked diary",
       });
     }
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.getAllMark = async (req, res) => {
+  try {
+    let data = await bookmark.findAll({
+      where: { userId: req.user.id, isMark: 1 },
+
+      include: [
+        {
+          model: post,
+          as: "post",
+          attributes: { exclude: ["updatedAt"] },
+        },
+      ],
+    });
+
+    data = JSON.parse(JSON.stringify(data));
+
+    data = data.map((item) => {
+      return {
+        ...item,
+        thumbnail: process.env.POST_PATH + item.post.thumbnail,
+      };
+    });
+
+    res.send({
+      status: "Success",
+      data,
+    });
   } catch (error) {
     res.send({
       status: "Failed",

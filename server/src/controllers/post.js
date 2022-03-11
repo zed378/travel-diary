@@ -115,6 +115,56 @@ exports.getPost = async (req, res) => {
   }
 };
 
+exports.getUserPost = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    let data = await post.findAll({
+      where: { userId: id },
+
+      include: [
+        {
+          model: user,
+          as: "user",
+          attributes: {
+            exclude: [
+              "email",
+              "password",
+              "photo",
+              "phone",
+              "createdAt",
+              "updatedAt",
+            ],
+          },
+        },
+      ],
+
+      attributes: {
+        exclude: ["updatedAt"],
+      },
+    });
+
+    data = JSON.parse(JSON.stringify(data));
+
+    data = data.map((item) => {
+      return {
+        ...item,
+        thumbnail: process.env.POST_PATH + item.thumbnail,
+      };
+    });
+
+    res.send({
+      status: "Success",
+      data,
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
 exports.editPost = async (req, res) => {
   try {
     const { id } = req.params;

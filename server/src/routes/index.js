@@ -13,6 +13,7 @@ const {
   addPost,
   getPosts,
   getPost,
+  getUserPost,
   editPost,
   delPost,
 } = require("../controllers/post");
@@ -32,10 +33,11 @@ router.get("/check-auth", auth, checkAuth);
 router.post("/post", auth, postImg("thumbnail"), addPost);
 router.get("/posts", getPosts);
 router.get("/post/:id", getPost);
+router.get("/userpost/:id", getUserPost);
 router.patch("/post/:id", auth, postImg("thumbnail"), editPost);
 router.delete("/post/:id", auth, delPost);
 
-// define post routes
+// define user routes
 router.get("/user/:id", getUser);
 router.patch("/user/:id", auth, profileImg("photo"), editUser);
 

@@ -188,7 +188,6 @@ exports.checkAuth = async (req, res) => {
           id: dataUser.id,
           name: dataUser.name,
           email: dataUser.email,
-          isAdmin: dataUser.isAdmin,
         },
       },
     });

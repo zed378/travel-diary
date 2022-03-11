@@ -48,3 +48,30 @@ exports.setMark = async (req, res) => {
     });
   }
 };
+
+exports.getMark = async (req, res) => {
+  try {
+    const { userId, postId } = req.params;
+
+    const data = await bookmark.findOne({
+      where: {
+        userId,
+        postId,
+      },
+
+      attributes: {
+        exclude: ["id", "createdAt", "updatedAt"],
+      },
+    });
+
+    res.send({
+      status: "Success",
+      data,
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};

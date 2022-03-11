@@ -7,7 +7,7 @@ import { UserContext } from "./UserContext";
 
 // create component here
 function PrivateRoute({ element: Component, ...rest }) {
-  const [state, dispatch] = useContext(UserContext);
+  const [state] = useContext(UserContext);
 
   return state.isLogin ? <Outlet /> : <Navigate to="/" />;
 }

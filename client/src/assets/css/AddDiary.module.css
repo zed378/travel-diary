@@ -14,17 +14,32 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .textPreview {
   position: absolute;
   top: 50%;
   left: 50%;
+  height: 350px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+}
+
+.textPreview:hover {
+  border: 4px dashed white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .textPreview > h1 {
@@ -81,7 +96,7 @@
   box-sizing: border-box;
   padding: 0 10px;
   font-size: 1rem;
-  background-color: rgb(224, 223, 223);
+  background-color: white;
   margin-bottom: 1rem;
   border: 1px solid gray;
   border-radius: 10px;
@@ -94,12 +109,6 @@
 .formContent > input:focus {
   outline: 2px solid #2e86de;
   border: none;
-}
-
-.formContent > p {
-  color: red;
-  font-family: avenirs;
-  margin: 0 0 1.5rem 0;
 }
 
 .formContent > button {

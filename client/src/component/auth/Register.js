@@ -21,9 +21,10 @@ function Register(props) {
     email: "",
     password: "",
     name: "",
+    phone: "",
   });
 
-  const { name, email, password } = form;
+  const { name, email, password, phone } = form;
 
   const handleChange = (e) => {
     setForm({
@@ -45,7 +46,6 @@ function Register(props) {
       const body = JSON.stringify(form);
 
       const response = await API.post("/register", body, config);
-      console.log(response);
 
       if (response.data.status === "Success") {
         setSuccess(true);
@@ -73,6 +73,7 @@ function Register(props) {
         name: "",
         email: "",
         password: "",
+        phone: "",
       });
     } catch (error) {
       setFailed(true);
@@ -188,7 +189,7 @@ function Register(props) {
           <input
             type="number"
             name="phone"
-            value={password}
+            value={phone}
             placeholder="Phone"
             onChange={handleChange}
             required

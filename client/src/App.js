@@ -25,6 +25,34 @@ if (localStorage.token) {
 function App() {
   const [state, dispatch] = useContext(UserContext);
 
+  const checkUser = async () => {
+    try {
+      const response = await API.get("/check-auth");
+
+      if (response.status === 404) {
+        return dispatch({
+          type: "ERROR",
+        });
+      }
+
+      let payload = response.data.data.user;
+      payload.token = localStorage.token;
+
+      if (response.data.status === "Success") {
+        dispatch({
+          type: "SUCCESS",
+          payload,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
+
   return (
     <Router>
       {state.isLogin ? <NavLog /> : <Nav />}

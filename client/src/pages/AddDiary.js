@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // import component
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // import assets
 import "../assets/css/ckeditor.css";
@@ -14,7 +14,7 @@ import cssModules from "../assets/css/AddDiary.module.css";
 import { API } from "../config/api";
 
 function AddDiary() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const pic = () => {
     document.getElementById("thumbnail").click();
   };
@@ -32,11 +32,6 @@ function AddDiary() {
 
   // set preview image
   const [preview, setPreview] = useState(null);
-
-  const handleEditor = (value) => {
-    setForm({ content: value });
-    console.log(form.content);
-  };
 
   const handleChange = (e) => {
     setForm({
@@ -67,13 +62,13 @@ function AddDiary() {
       formData.set("content", form.content);
       formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name);
 
-      const response = await API.post("/product", formData, config);
+      const response = await API.post("/post", formData, config);
 
       if (response.data.status === "Success") {
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
-          navigate("/product");
+          navigate("/");
         }, 1500);
       } else if (response.data.status === "Failed") {
         setFail(true);
@@ -104,11 +99,45 @@ function AddDiary() {
         </div>
       </div>
 
-      <div className={cssModules.formContainer} onSubmit={handleSubmit}>
+      <div className={cssModules.formContainer}>
         <form className={cssModules.formContent}>
+          {success ? (
+            <h3
+              style={{
+                color: "green",
+                background: "#c5fce5",
+                textAlign: "center",
+                padding: "0.5rem 0",
+                fontSize: "1.15rem",
+                fontFamily: "avenirs",
+              }}
+            >
+              Add Journey Success
+            </h3>
+          ) : (
+            <></>
+          )}
+
+          {fail ? (
+            <h3
+              style={{
+                color: "red",
+                background: "#e0cecc",
+                textAlign: "center",
+                padding: "0.5rem 0",
+                fontSize: "1.15rem",
+                fontFamily: "avenirs",
+              }}
+            >
+              Add Journey Failed
+            </h3>
+          ) : (
+            <></>
+          )}
+
           <input
             type="file"
-            name="thumnail"
+            name="thumbnail"
             id="thumbnail"
             hidden
             onChange={handleChange}
@@ -123,6 +152,10 @@ function AddDiary() {
 
           <CKEditor
             editor={ClassicEditor}
+            config={{
+              placeholder:
+                "Type something here & make sure you only add thumbnail using that big box.",
+            }}
             onReady={(editor) => {
               // You can store the "editor" and use when it is needed.
               console.log("Editor is ready to use!", editor);
@@ -131,20 +164,11 @@ function AddDiary() {
               const data = editor.getData();
               setForm({ content: data });
             }}
-            onBlur={(event, editor) => {
-              console.log("Blur.", editor);
-            }}
-            onFocus={(event, editor) => {
-              console.log("Focus.", editor);
-            }}
           />
-          <p>
-            <small>
-              * Make sure add space " " at the end of text before submit.
-            </small>
-          </p>
 
-          <button>SUBMIT</button>
+          <button type="submit" onClick={handleSubmit}>
+            SUBMIT
+          </button>
         </form>
       </div>
     </div>

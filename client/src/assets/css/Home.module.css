@@ -145,7 +145,7 @@
   color: gray;
 }
 
-.cardDesc > h4 {
+.cardDesc > .h4 {
   margin: 0;
   font-size: 1rem;
   font-family: roboto;

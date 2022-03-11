@@ -1,41 +1,81 @@
 // import package
-import { useState, useParams } from "react";
+import { useState, useParams, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import dateFormat, { masks } from "dateformat";
+import DOMPurify from "dompurify";
 
 // import assets
-import thumb from "../../assets/img/thumb.jpg";
 import bookmark from "../../assets/img/bookmark.svg";
 import bookmarked from "../../assets/img/bookmarked.svg";
 import cssModules from "../../assets/css/Home.module.css";
+import { UserContext } from "../../context/UserContext";
 
-function DiaryCard() {
+// import config
+import { API } from "../../config/api";
+
+function DiaryCard({ item, click }) {
   let navigate = useNavigate();
+  const [state] = useContext(UserContext);
+
+  const [marked, setMarked] = useState([]);
+
+  const setMark = async (id) => {
+    try {
+      await API.get(`/mark/${id}`);
+
+      getmark();
+      click();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getmark = async () => {
+    try {
+      const response = await API.get(`/getmark/${state.user.id}/${item.id}`);
+
+      setMarked(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getmark();
+  }, []);
 
   return (
     <div className={cssModules.cardContent}>
-      <div className={cssModules.bookmark}>
-        <img src={bookmark} alt="Bookmark" />
+      <div className={cssModules.bookmark} onClick={() => setMark(item.id)}>
+        {marked === null || marked.isMark === 0 ? (
+          <img src={bookmark} alt="Bookmark" />
+        ) : marked !== null || marked.isMark === 1 ? (
+          <img src={bookmarked} alt="Bookmark" />
+        ) : (
+          <img src={bookmark} alt="Bookmark" />
+        )}
       </div>
 
       <div
         className={cssModules.thumbnail}
         onClick={() => navigate("/detail-diary")}
       >
-        <img src={thumb} alt="Preview" />
+        <img src={item.thumbnail} alt="Preview" />
       </div>
 
       <div
         className={cssModules.cardDesc}
         onClick={() => navigate("/detail-diary")}
       >
-        <h2>Bersemayam di tanah Dewata</h2>
-        <p>29 July 2020, Cipto</p>
+        <h2>{item.title}</h2>
+        <p>
+          {dateFormat(item.createdAt, "dddd, d mmmm, yyyy")}, {item.user.name}
+        </p>
 
-        <h4>
-          Liburan di tahun baru 2020 keberangkatan saya menuju Pulau Dewata
-          Bali. Sampai lah saya malam itu di Bali Airport menujukan waktu jam
-          02.00, dan melanjutkan pejalanan yang menyenangkan..
-        </h4>
+        <div
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }}
+          className={cssModules.h4}
+        ></div>
       </div>
     </div>
   );

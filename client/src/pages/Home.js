@@ -1,4 +1,5 @@
 // import package
+import { useState, useEffect } from "react";
 
 // import component
 import DiaryCard from "../component/card/DiaryCard";
@@ -6,7 +7,26 @@ import DiaryCard from "../component/card/DiaryCard";
 // import assets
 import cssModules from "../assets/css/Home.module.css";
 
+// import config
+import { API } from "../config/api";
+
 function Home() {
+  const [diaries, setDiaries] = useState([]);
+
+  const getDiaries = async () => {
+    try {
+      const response = await API.get("/posts");
+
+      setDiaries(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getDiaries();
+  }, []);
+
   return (
     <div className={cssModules.homeContainer}>
       <h1 className={cssModules.homeTitle}>Journey</h1>
@@ -27,7 +47,9 @@ function Home() {
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        <DiaryCard />
+        {diaries?.map((item, index) => (
+          <DiaryCard item={item} key={index} click={getDiaries} />
+        ))}
         {/* end of card */}
       </div>
     </div>

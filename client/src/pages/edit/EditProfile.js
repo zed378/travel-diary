@@ -1,34 +1,49 @@
 // import package
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-
-// import component
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 // import assets
-import "../assets/css/ckeditor.css";
-import cssModules from "../assets/css/AddDiary.module.css";
+import cssModules from "../../assets/css/EditProfile.module.css";
 
 // import config
-import { API } from "../config/api";
+import { API } from "../../config/api";
 
-function AddDiary() {
-  const navigate = useNavigate();
+function EditProfile() {
+  const { id } = useParams();
   const pic = () => {
-    document.getElementById("thumbnail").click();
+    document.getElementById("thumb").click();
   };
+  let navigate = useNavigate();
+
+  // store data
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    photo: "",
+  });
+
+  const [user, setUser] = useState([]);
 
   // alert
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
 
-  // store data
-  const [form, setForm] = useState({
-    title: "",
-    content: "",
-    thumbnail: "",
-  });
+  const getUser = async () => {
+    try {
+      const response = await API.get(`/user/${id}`);
+
+      setForm({
+        ...form,
+        name: response.data.data.name,
+        phone: response.data.data.phone,
+      });
+
+      setPreview(response.data.data.photo);
+      setUser(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // set preview image
   const [preview, setPreview] = useState(null);
@@ -60,17 +75,18 @@ function AddDiary() {
 
       // Store form data as object
       const formData = new FormData();
-      formData.set("title", form.title);
-      formData.set("content", form.content);
-      formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name);
+      formData.set("name", form.name);
+      formData.set("phone", form.phone);
+      formData.set("photo", form.photo[0], form.photo[0].name);
 
-      const response = await API.post("/post", formData, config);
+      const response = await API.patch(`/user/${user.id}`, formData, config);
 
       if (response.data.status === "Success") {
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
           navigate("/");
+          document.location.reload(true);
         }, 1500);
       } else if (response.data.status === "Failed") {
         setFail(true);
@@ -86,28 +102,23 @@ function AddDiary() {
     }
   };
 
-  const handleEditorChange = (event, editor) => {
-    const data = editor.getData();
-    setForm({ ...form, content: data });
-  };
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
-    <div className={cssModules.writeContainer}>
-      <h1>New Journey</h1>
-      <div className={cssModules.imgPreview}>
-        <div className={cssModules.imgWrapper} onClick={pic}>
-          {!preview ? (
-            <div className={cssModules.textPreview}>
-              <h1>Add Image</h1>
-            </div>
-          ) : (
-            <>{preview && <img src={preview} alt="Preview" />}</>
-          )}
-        </div>
-      </div>
-
+    <div className={cssModules.editContainer}>
       <div className={cssModules.formContainer}>
-        <form className={cssModules.formContent} onSubmit={handleSubmit}>
+        <form className={cssModules.editForm} onSubmit={handleSubmit}>
+          <button
+            className={cssModules.backBtn}
+            onClick={() => navigate("/profile")}
+          >
+            Back
+          </button>
+
+          <h1>Edit Profile</h1>
+
           {success ? (
             <h3
               style={{
@@ -119,7 +130,7 @@ function AddDiary() {
                 fontFamily: "avenirs",
               }}
             >
-              Add Journey Success
+              Edit Profile Success
             </h3>
           ) : (
             <></>
@@ -136,7 +147,7 @@ function AddDiary() {
                 fontFamily: "avenirs",
               }}
             >
-              Add Journey Failed
+              Edit Profile Failed
             </h3>
           ) : (
             <></>
@@ -144,37 +155,41 @@ function AddDiary() {
 
           <input
             type="file"
-            name="thumbnail"
-            id="thumbnail"
-            hidden
+            name="photo"
+            id="thumb"
             onChange={handleChange}
+            hidden
           />
-          <label htmlFor="title">Title</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
-            name="title"
-            placeholder="Input Title"
+            name="name"
             onChange={handleChange}
+            value={user.name}
           />
-
-          <CKEditor
-            editor={ClassicEditor}
-            config={{
-              placeholder:
-                "Type something here & make sure you only add thumbnail using that big box.",
-            }}
-            onReady={(editor) => {
-              // You can store the "editor" and use when it is needed.
-              console.log("Editor is ready to use!", editor);
-            }}
-            onChange={handleEditorChange}
+          <label htmlFor="phone">Phone</label>
+          <input
+            type="number"
+            name="phone"
+            onChange={handleChange}
+            value={user.phone}
           />
-
-          <button type="submit">SUBMIT</button>
+          <button type="submit" className={cssModules.saveBtn}>
+            SAVE
+          </button>
         </form>
+        <div className={cssModules.imgContainer} onClick={pic}>
+          {!preview ? (
+            <div className={cssModules.addText}>
+              <h1>Add Image</h1>
+            </div>
+          ) : (
+            <>{preview && <img src={preview} alt="Preview" />}</>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-export default AddDiary;
+export default EditProfile;

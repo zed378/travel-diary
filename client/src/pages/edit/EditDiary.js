@@ -1,23 +1,25 @@
 // import package
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 
 // import component
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // import assets
-import "../assets/css/ckeditor.css";
-import cssModules from "../assets/css/AddDiary.module.css";
+import "../../assets/css/ckeditor.css";
+import cssModules from "../../assets/css/AddDiary.module.css";
 
 // import config
-import { API } from "../config/api";
+import { API } from "../../config/api";
 
-function AddDiary() {
+function EditDiary() {
   const navigate = useNavigate();
   const pic = () => {
     document.getElementById("thumbnail").click();
   };
+
+  const { idPost } = useParams();
 
   // alert
   const [success, setSuccess] = useState(false);
@@ -30,6 +32,33 @@ function AddDiary() {
     thumbnail: "",
   });
 
+  const [diary, setDiary] = useState([]);
+
+  // get data from previous diary
+  const getDiary = async () => {
+    try {
+      const response = await API.get(`/post/${idPost}`);
+
+      setPreview(response.data.data.thumbnail);
+      setForm({
+        ...form,
+        title: response.data.data.title,
+        content: response.data.data.content,
+      });
+
+      setDiary({
+        id: response.data.data.id,
+        title: response.data.data.title,
+        thumbnail: response.data.data.thumbnail,
+        content: response.data.data.content,
+        createdAt: response.data.data.createdAt,
+        name: response.data.data.user.name,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // set preview image
   const [preview, setPreview] = useState(null);
 
@@ -39,8 +68,6 @@ function AddDiary() {
       [e.target.name]:
         e.target.type === "file" ? e.target.files : e.target.value,
     });
-
-    console.log(form.title);
 
     if (e.target.type === "file") {
       let url = URL.createObjectURL(e.target.files[0]);
@@ -64,7 +91,7 @@ function AddDiary() {
       formData.set("content", form.content);
       formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name);
 
-      const response = await API.post("/post", formData, config);
+      const response = await API.patch(`/post/${diary.id}`, formData, config);
 
       if (response.data.status === "Success") {
         setSuccess(true);
@@ -89,7 +116,12 @@ function AddDiary() {
   const handleEditorChange = (event, editor) => {
     const data = editor.getData();
     setForm({ ...form, content: data });
+    console.log(form.content);
   };
+
+  useEffect(() => {
+    getDiary();
+  }, []);
 
   return (
     <div className={cssModules.writeContainer}>
@@ -153,12 +185,14 @@ function AddDiary() {
           <input
             type="text"
             name="title"
+            value={form.title}
             placeholder="Input Title"
             onChange={handleChange}
           />
 
           <CKEditor
             editor={ClassicEditor}
+            data={diary.content}
             config={{
               placeholder:
                 "Type something here & make sure you only add thumbnail using that big box.",
@@ -177,4 +211,4 @@ function AddDiary() {
   );
 }
 
-export default AddDiary;
+export default EditDiary;

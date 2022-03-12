@@ -52,6 +52,21 @@
   color: #6c6c6c;
 }
 
+.imgContainer > button {
+  margin-top: 1rem;
+  width: 100px;
+  height: 1.5rem;
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
 .cardContainer {
   width: 100%;
   display: flex;

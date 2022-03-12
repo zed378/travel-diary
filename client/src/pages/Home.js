@@ -12,6 +12,7 @@ import { API } from "../config/api";
 
 function Home() {
   const [diaries, setDiaries] = useState([]);
+  const [search, setSearch] = useState("");
 
   const getDiaries = async () => {
     try {
@@ -32,24 +33,31 @@ function Home() {
       <h1 className={cssModules.homeTitle}>Journey</h1>
 
       <div className={cssModules.searchContainer}>
-        <form className={cssModules.searchForm}>
-          <input
-            type="text"
-            placeholder="Find Journey"
-            name="search"
-            className={cssModules.searchInput}
-          />
-          <button type="submit" className={cssModules.searchBtn}>
-            Search
-          </button>
-        </form>
+        <input
+          type="text"
+          placeholder="Find Journey"
+          name="search"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
       </div>
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        {diaries?.map((item, index) => (
-          <DiaryCard item={item} key={index} click={getDiaries} />
-        ))}
+        {diaries
+          .filter((val) => {
+            if (search === "") {
+              return val;
+            } else if (
+              val.title.toLowerCase().includes(search.toLocaleLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((item, index) => (
+            <DiaryCard item={item} key={index} press={getDiaries} />
+          ))}
         {/* end of card */}
       </div>
     </div>

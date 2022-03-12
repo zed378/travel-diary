@@ -19,7 +19,6 @@ function DetailDiary() {
     try {
       const response = await API.get(`/post/${id}`);
 
-      // setDiary(response.data.data);
       setDiary({
         title: response.data.data.title,
         thumbnail: response.data.data.thumbnail,
@@ -39,6 +38,11 @@ function DetailDiary() {
 
   return (
     <div className={cssModules.diaryContainer}>
+      <button className={cssModules.backBtn} onClick={() => navigate("/")}>
+        {" "}
+        &larr; Back
+      </button>
+
       <h1>{diary.title}</h1>
       <div className={cssModules.info}>
         <p className={cssModules.infoDate}>

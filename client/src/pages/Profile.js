@@ -1,5 +1,6 @@
 // import package
 import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 // import component
 import { UserContext } from "../context/UserContext";
@@ -13,6 +14,7 @@ import { API } from "../config/api";
 
 function Profile() {
   const [state] = useContext(UserContext);
+  let navigate = useNavigate();
 
   const [user, setUser] = useState([]);
   const [diaries, setDiaries] = useState([]);
@@ -52,13 +54,16 @@ function Profile() {
         </div>
         <h2>{user.name}</h2>
         <p>{user.email}</p>
+        <button onClick={() => navigate(`/profile-edit/${user.id}`)}>
+          Edit
+        </button>
       </div>
 
       <h2>My Journey</h2>
       <div className={cssModules.cardContainer}>
         {/* card */}
         {diaries?.map((item, index) => (
-          <DiaryCard item={item} key={index} click={getDiaries} />
+          <DiaryCard item={item} key={index} press={getDiaries} />
         ))}
         {/* end of card */}
       </div>

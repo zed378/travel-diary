@@ -1,5 +1,5 @@
 // import model
-const { bookmark, post } = require("../../models");
+const { bookmark, post, user } = require("../../models");
 
 exports.setMark = async (req, res) => {
   try {
@@ -59,11 +59,30 @@ exports.getAllMark = async (req, res) => {
         {
           model: post,
           as: "post",
-          attributes: { exclude: ["updatedAt"] },
+          include: [
+            {
+              model: user,
+              as: "user",
+              attributes: {
+                exclude: [
+                  "id",
+                  "email",
+                  "password",
+                  "photo",
+                  "phone",
+                  "createdAt",
+                  "updatedAt",
+                ],
+              },
+            },
+          ],
+          attributes: { exclude: ["userId", "updatedAt"] },
         },
       ],
 
-      attributes: { exclude: ["updatedAt", "createdAt"] },
+      attributes: {
+        exclude: ["userId", "postId", "isMark", "updatedAt", "createdAt"],
+      },
     });
 
     data = JSON.parse(JSON.stringify(data));

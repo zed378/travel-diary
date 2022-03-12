@@ -1,5 +1,5 @@
 // import model
-const { user, post, bookmark } = require("../../models");
+const { user, post } = require("../../models");
 
 // import package
 const fs = require("fs");
@@ -46,15 +46,9 @@ exports.getPosts = async (req, res) => {
             ],
           },
         },
-
-        {
-          model: bookmark,
-          as: "mark",
-          attributes: {
-            exclude: ["id", "createdAt", "updatedAt"],
-          },
-        },
       ],
+
+      order: [["id", "DESC"]],
 
       attributes: {
         exclude: ["updatedAt"],

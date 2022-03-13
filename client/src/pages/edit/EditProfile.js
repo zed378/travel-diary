@@ -179,13 +179,10 @@ function EditProfile() {
           </button>
         </form>
         <div className={cssModules.imgContainer} onClick={pic}>
-          {!preview ? (
-            <div className={cssModules.addText}>
-              <h1>Add Image</h1>
-            </div>
-          ) : (
-            <>{preview && <img src={preview} alt="Preview" />}</>
-          )}
+          {preview && <img src={preview} alt="Preview" />}
+          <div className={cssModules.addText}>
+            <h1>Add Image Here</h1>
+          </div>
         </div>
       </div>
     </div>

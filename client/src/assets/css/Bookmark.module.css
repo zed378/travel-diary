@@ -16,6 +16,24 @@
   gap: 2.5%;
 }
 
+.nomark {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nomark > h1 {
+  color: #2e86de;
+  margin: 0;
+  font-family: roboto;
+  font-size: 3rem;
+}
+
+.nomark > img {
+  width: 40%;
+}
+
 .cardContent {
   width: 23.125%;
   height: auto;

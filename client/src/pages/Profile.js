@@ -7,6 +7,7 @@ import { UserContext } from "../context/UserContext";
 import DiaryCard from "../component/card/DiaryCard";
 
 // import assets
+import nodiary from "../assets/img/nodiary.svg";
 import cssModules from "../assets/css/Profile.module.css";
 
 // import config
@@ -62,9 +63,18 @@ function Profile() {
       <h2>My Journey</h2>
       <div className={cssModules.cardContainer}>
         {/* card */}
-        {diaries?.map((item, index) => (
-          <DiaryCard item={item} key={index} press={getDiaries} />
-        ))}
+        {diaries.length === 0 ? (
+          <div className={cssModules.nodiary}>
+            <h1>No Diary Found</h1>
+            <img src={nodiary} alt={nodiary} />
+          </div>
+        ) : (
+          <>
+            {diaries?.map((item, index) => (
+              <DiaryCard item={item} key={index} press={getDiaries} />
+            ))}
+          </>
+        )}
         {/* end of card */}
       </div>
     </div>

@@ -67,6 +67,22 @@
   cursor: pointer;
 }
 
+.nodiary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nodiary > h1 {
+  color: #2e86de;
+  margin: 0;
+}
+
+.nodiary > img {
+  width: 30%;
+}
+
 .cardContainer {
   width: 100%;
   display: flex;

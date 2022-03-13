@@ -232,3 +232,14 @@
 .delYes:hover {
   background-color: rgb(170, 13, 13);
 }
+
+.nopost {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nopost > img {
+  width: 35%;
+}

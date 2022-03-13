@@ -1,12 +1,12 @@
 // import package
 import { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 // import component
 import BookmarkCard from "../component/card/BookmarkCard";
 import { UserContext } from "../context/UserContext";
 
 // import assets
+import nomark from "../assets/img/nomark.svg";
 import cssModules from "../assets/css/Bookmark.module.css";
 
 import { API } from "../config/api";
@@ -35,9 +35,18 @@ function Bookmark() {
 
       <div className={cssModules.cardContainer}>
         {/* card */}
-        {marked?.map((item, index) => (
-          <BookmarkCard item={item} key={index} press={getMarked} />
-        ))}
+        {marked.length === 0 ? (
+          <div className={cssModules.nomark}>
+            <img src={nomark} alt={nomark} />
+            <h1>No Bookmark</h1>
+          </div>
+        ) : (
+          <>
+            {marked?.map((item, index) => (
+              <BookmarkCard item={item} key={index} press={getMarked} />
+            ))}
+          </>
+        )}
         {/* end of card */}
       </div>
     </div>

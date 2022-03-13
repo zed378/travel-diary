@@ -33,7 +33,6 @@ function EditProfile() {
       const response = await API.get(`/user/${id}`);
 
       setForm({
-        ...form,
         name: response.data.data.name,
         phone: response.data.data.phone,
       });
@@ -54,8 +53,6 @@ function EditProfile() {
       [e.target.name]:
         e.target.type === "file" ? e.target.files : e.target.value,
     });
-
-    console.log(form.title);
 
     if (e.target.type === "file") {
       let url = URL.createObjectURL(e.target.files[0]);
@@ -165,14 +162,14 @@ function EditProfile() {
             type="text"
             name="name"
             onChange={handleChange}
-            value={user.name}
+            value={form.name}
           />
           <label htmlFor="phone">Phone</label>
           <input
             type="number"
             name="phone"
             onChange={handleChange}
-            value={user.phone}
+            value={form.phone}
           />
           <button type="submit" className={cssModules.saveBtn}>
             SAVE

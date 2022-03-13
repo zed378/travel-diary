@@ -19,8 +19,10 @@ function EditProfile() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    photo: "",
+    photo: null,
   });
+
+  const { name, phone } = form;
 
   const [user, setUser] = useState([]);
 
@@ -158,18 +160,13 @@ function EditProfile() {
             hidden
           />
           <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={form.name}
-          />
+          <input type="text" name="name" onChange={handleChange} value={name} />
           <label htmlFor="phone">Phone</label>
           <input
             type="number"
             name="phone"
             onChange={handleChange}
-            value={form.phone}
+            value={phone}
           />
           <button type="submit" className={cssModules.saveBtn}>
             SAVE

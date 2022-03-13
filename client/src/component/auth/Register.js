@@ -77,7 +77,9 @@ function Register(props) {
       });
     } catch (error) {
       setFailed(true);
-      setTimeout(setFailed(false), 4000);
+      setTimeout(() => {
+        setFailed(false);
+      }, 4000);
     }
   };
 

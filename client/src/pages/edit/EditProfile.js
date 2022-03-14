@@ -19,7 +19,7 @@ function EditProfile() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    photo: null,
+    photo: "",
   });
 
   const { name, phone } = form;

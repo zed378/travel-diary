@@ -145,6 +145,29 @@
   object-position: 50%;
 }
 
+.love {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.loveWrapper {
+  height: 1.25rem;
+  width: auto;
+}
+
+.loveWrapper > img {
+  height: 1.25rem;
+}
+
+.love > p {
+  margin: 0;
+  font-family: roboto;
+}
+
 .cardDesc {
   width: 100%;
   box-sizing: border-box;

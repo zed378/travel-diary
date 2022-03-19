@@ -7,6 +7,8 @@ import DOMPurify from "dompurify";
 // import assets
 import bookmark from "../../assets/img/bookmark.svg";
 import bookmarked from "../../assets/img/bookmarked.svg";
+import love from "../../assets/img/love.svg";
+import loved from "../../assets/img/loved.svg";
 import edit from "../../assets/img/edit.svg";
 import trash from "../../assets/img/trash.svg";
 import cssModules from "../../assets/css/Home.module.css";
@@ -24,6 +26,8 @@ function DiaryCard({ item, press }) {
   const [modal, setModal] = useState(null);
 
   const [marked, setMarked] = useState([]);
+  const [like, setLike] = useState([]);
+  const [allLike, setAllLike] = useState([]);
 
   const setMark = async (id) => {
     try {
@@ -41,6 +45,38 @@ function DiaryCard({ item, press }) {
       const response = await API.get(`/getmark/${state.user.id}/${item.id}`);
 
       setMarked(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const clickLike = async () => {
+    try {
+      await API.get(`/set-like/${state.user.id}/${item.id}`);
+
+      getLike();
+      getAllLike();
+      press();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getLike = async () => {
+    try {
+      const response = await API.get(`/like/${item.id}`);
+
+      setLike(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getAllLike = async () => {
+    try {
+      const response = await API.get(`/get-like/${item.id}`);
+
+      setAllLike(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -84,6 +120,8 @@ function DiaryCard({ item, press }) {
 
   useEffect(() => {
     getmark();
+    getLike();
+    getAllLike();
   }, []);
 
   return (
@@ -146,6 +184,45 @@ function DiaryCard({ item, press }) {
         >
           <img src={item.thumbnail} alt="Preview" />
         </div>
+
+        {/* begin like button */}
+        <div className={cssModules.love}>
+          <div
+            className={cssModules.loveWrapper}
+            onClick={() => {
+              if (state.isLogin) {
+                clickLike();
+              } else {
+                logTrigger();
+              }
+            }}
+          >
+            {state.isLogin ? (
+              <>
+                {like === null || like.isLike === 0 ? (
+                  <img
+                    src={love}
+                    alt="Like"
+                    onMouseOver={(e) => (e.currentTarget.src = loved)}
+                    onMouseOut={(e) => (e.currentTarget.src = love)}
+                  />
+                ) : (
+                  <img src={loved} alt="Like" />
+                )}
+              </>
+            ) : (
+              <img
+                src={love}
+                alt="Like"
+                onMouseOver={(e) => (e.currentTarget.src = loved)}
+                onMouseOut={(e) => (e.currentTarget.src = love)}
+              />
+            )}
+          </div>
+
+          {allLike.length === 0 ? <p>Like</p> : <p>{allLike.length} Likes</p>}
+        </div>
+        {/* end of like button */}
 
         <div
           className={cssModules.cardDesc}

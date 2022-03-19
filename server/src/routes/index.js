@@ -24,6 +24,9 @@ const { editUser, getUser } = require("../controllers/user");
 // import bookmark controller
 const { setMark, getMark, getAllMark } = require("../controllers/bookmark");
 
+// import like controller
+const { setLike, getLike, getAllLike } = require("../controllers/like");
+
 // define auth routes
 router.post("/register", register);
 router.post("/login", login);
@@ -45,5 +48,10 @@ router.patch("/user/:id", auth, profileImg("photo"), editUser);
 router.get("/mark/:postId", auth, setMark);
 router.get("/marks/:id", auth, getAllMark);
 router.get("/getmark/:userId/:postId", auth, getMark);
+
+// define like routes
+router.get("/set-like/:userId/:postId", auth, setLike);
+router.get("/like/:id", auth, getLike);
+router.get("/get-like/:id", getAllLike);
 
 module.exports = router;

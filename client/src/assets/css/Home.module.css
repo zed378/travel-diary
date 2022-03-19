@@ -148,7 +148,7 @@
 .cardDesc {
   width: 100%;
   box-sizing: border-box;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
 }
 
 .cardDesc > h2 {

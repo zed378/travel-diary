@@ -57,6 +57,7 @@ function Login(props) {
           type: "LOGIN",
           payload: response.data.data,
         });
+        document.location.reload(true);
       }
     } catch (error) {
       setFailed(true);

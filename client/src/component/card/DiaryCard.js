@@ -10,6 +10,7 @@ import bookmarked from "../../assets/img/bookmarked.svg";
 import love from "../../assets/img/love.svg";
 import loved from "../../assets/img/loved.svg";
 import edit from "../../assets/img/edit.svg";
+import editimg from "../../assets/img/editimg.svg";
 import trash from "../../assets/img/trash.svg";
 import cssModules from "../../assets/css/Home.module.css";
 import { UserContext } from "../../context/UserContext";
@@ -159,10 +160,18 @@ function DiaryCard({ item, press }) {
               <div className={cssModules.menuEdit}>
                 <div
                   className={cssModules.menuImg}
+                  onClick={() => navigate(`/write-pic-edit/${item.id}`)}
+                >
+                  <img src={editimg} alt="Edit" />
+                </div>
+
+                <div
+                  className={cssModules.menuImg}
                   onClick={() => navigate(`/write-edit/${item.id}`)}
                 >
                   <img src={edit} alt="Edit" />
                 </div>
+
                 <div
                   className={cssModules.menuImg}
                   onClick={() => delModal(item.id, item.title)}

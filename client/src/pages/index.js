@@ -3,8 +3,10 @@ import Profile from "./Profile";
 import Bookmark from "./Bookmark";
 import DetailDiary from "./DetailDiary";
 import AddDiary from "./AddDiary";
+import EditDiaryPic from "./edit/EditDiaryPic";
 import EditDiary from "./edit/EditDiary";
-import EditProfile from "./edit/EditProfile";
+import EditProfilePic from "./edit/EditProfilePic";
+import EditProfileInfo from "./edit/EditProfileInfo";
 
 export {
   Home,
@@ -12,6 +14,8 @@ export {
   Bookmark,
   DetailDiary,
   AddDiary,
+  EditDiaryPic,
   EditDiary,
-  EditProfile,
+  EditProfilePic,
+  EditProfileInfo,
 };

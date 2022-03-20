@@ -10,40 +10,12 @@
   text-align: left;
 }
 
-.imgPreview {
+.imgContainer {
   width: 100%;
   display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.textPreview {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 350px;
-  width: 90%;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-}
-
-.textPreview:hover {
-  border: 4px dashed white;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
-.textPreview > h1 {
-  color: white;
+  margin-bottom: 1rem;
 }
 
 .imgWrapper {
@@ -79,7 +51,7 @@
 }
 
 .formContent {
-  width: 85%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -111,17 +83,6 @@
   border: none;
 }
 
-.formContent > button {
-  height: 3rem;
-  font-size: 1rem;
-  background-color: #2e86de;
-  cursor: pointer;
-}
-
-.formContent > button:hover {
-  background-color: rgb(37, 88, 216);
-}
-
 .btnWrapper > button {
   width: 50%;
   border: none;
@@ -131,7 +92,6 @@
   font-family: avenirs;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 1rem;
 }
 
 .backBtn {
@@ -159,4 +119,33 @@
 
 .saveBtn:hover {
   background-color: #1e5fa0;
+}
+
+.addText {
+  width: 90%;
+  height: 350px;
+  color: #2e86de00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  z-index: 9;
+}
+
+.addText:hover {
+  color: white;
+  outline: 4px dashed #2e86de;
+  background-color: gray;
 }

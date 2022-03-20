@@ -1,50 +1,42 @@
 // import package
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-
-// import component
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // import assets
-import "../../assets/css/ckeditor.css";
-import cssModules from "../../assets/css/AddDiary.module.css";
+import cssModules from "../../assets/css/EditProfile.module.css";
 
 // import config
 import { API } from "../../config/api";
 
-function EditDiary() {
-  const navigate = useNavigate();
+function EditProfile() {
+  const { id } = useParams();
 
-  const { idPost } = useParams();
+  let navigate = useNavigate();
 
   // store data
   const [form, setForm] = useState({
-    title: "",
-    content: "",
+    name: "",
+    phone: "",
   });
 
-  const [diary, setDiary] = useState([]);
+  const { name, phone } = form;
+
+  const [user, setUser] = useState([]);
 
   // alert
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
 
-  // get data from previous diary
-  const getDiary = async () => {
+  const getUser = async () => {
     try {
-      const response = await API.get(`/post/${idPost}`);
+      const response = await API.get(`/user/${id}`);
 
       setForm({
-        ...form,
-        title: response.data.data.title,
-        content: response.data.data.content,
+        name: response.data.data.name,
+        phone: response.data.data.phone,
       });
 
-      setDiary({
-        id: response.data.data.id,
-        content: response.data.data.content,
-      });
+      setUser(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +49,7 @@ function EditDiary() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const onSubmitted = async (e) => {
     try {
       e.preventDefault();
 
@@ -69,13 +61,13 @@ function EditDiary() {
 
       const body = JSON.stringify(form);
 
-      const response = await API.patch(`/post-edit/${diary.id}`, body, config);
+      const response = await API.patch(`/user-edit/${user.id}`, body, config);
 
       if (response.data.status === "Success") {
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
-          navigate("/");
+          navigate("/profile");
         }, 1500);
       }
     } catch (error) {
@@ -86,21 +78,16 @@ function EditDiary() {
     }
   };
 
-  const handleEditorChange = (event, editor) => {
-    const data = editor.getData();
-    setForm({ ...form, content: data });
-  };
-
   useEffect(() => {
-    getDiary();
+    getUser();
   }, []);
 
   return (
-    <div className={cssModules.writeContainer}>
-      <h1 style={{ textAlign: "center" }}>Edit Journey Content</h1>
-
+    <div className={cssModules.editContainer}>
       <div className={cssModules.formContainer}>
-        <form className={cssModules.formContent} onSubmit={handleSubmit}>
+        <form className={cssModules.editForm} onSubmit={onSubmitted}>
+          <h1>Edit Profile Info</h1>
+
           {success ? (
             <h3
               style={{
@@ -110,9 +97,10 @@ function EditDiary() {
                 padding: "0.5rem 0",
                 fontSize: "1.15rem",
                 fontFamily: "avenirs",
+                width: "100%",
               }}
             >
-              Add Journey Success
+              Edit Profile Success
             </h3>
           ) : (
             <></>
@@ -127,41 +115,28 @@ function EditDiary() {
                 padding: "0.5rem 0",
                 fontSize: "1.15rem",
                 fontFamily: "avenirs",
+                width: "100%",
               }}
             >
-              Add Journey Failed
+              Edit Profile Failed
             </h3>
           ) : (
             <></>
           )}
 
-          <label htmlFor="title">Title</label>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" onChange={handleChange} value={name} />
+          <label htmlFor="phone">Phone</label>
           <input
-            type="text"
-            name="title"
-            value={form.title}
-            placeholder="Input Title"
+            type="number"
+            name="phone"
             onChange={handleChange}
+            value={phone}
           />
-
-          <CKEditor
-            editor={ClassicEditor}
-            data={diary.content}
-            config={{
-              placeholder:
-                "Type something here & make sure you only add thumbnail using that big box.",
-            }}
-            onReady={(editor) => {
-              // You can store the "editor" and use when it is needed.
-              console.log("Editor is ready to use!", editor);
-            }}
-            onChange={handleEditorChange}
-          />
-
           <div className={cssModules.btnWrapper}>
             <button
               className={cssModules.backBtn}
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/profile")}
             >
               CANCEL
             </button>
@@ -175,4 +150,4 @@ function EditDiary() {
   );
 }
 
-export default EditDiary;
+export default EditProfile;

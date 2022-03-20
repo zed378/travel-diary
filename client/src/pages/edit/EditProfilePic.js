@@ -8,7 +8,7 @@ import cssModules from "../../assets/css/EditProfile.module.css";
 // import config
 import { API } from "../../config/api";
 
-function EditProfile() {
+function EditProfilePic() {
   const { id } = useParams();
   const pic = () => {
     document.getElementById("thumb").click();
@@ -17,12 +17,8 @@ function EditProfile() {
 
   // store data
   const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    photo: "",
+    photo: null,
   });
-
-  const { name, phone } = form;
 
   const [user, setUser] = useState([]);
 
@@ -33,11 +29,6 @@ function EditProfile() {
   const getUser = async () => {
     try {
       const response = await API.get(`/user/${id}`);
-
-      setForm({
-        name: response.data.data.name,
-        phone: response.data.data.phone,
-      });
 
       setPreview(response.data.data.photo);
       setUser(response.data.data);
@@ -74,8 +65,6 @@ function EditProfile() {
 
       // Store form data as object
       const formData = new FormData();
-      formData.set("name", form.name);
-      formData.set("phone", form.phone);
       formData.set("photo", form.photo[0], form.photo[0].name);
 
       const response = await API.patch(`/user/${user.id}`, formData, config);
@@ -87,11 +76,6 @@ function EditProfile() {
           navigate("/");
           document.location.reload(true);
         }, 1500);
-      } else if (response.data.status === "Failed") {
-        setFail(true);
-        setTimeout(() => {
-          setFail(false);
-        }, 3000);
       }
     } catch (error) {
       setFail(true);
@@ -109,18 +93,12 @@ function EditProfile() {
     <div className={cssModules.editContainer}>
       <div className={cssModules.formContainer}>
         <form className={cssModules.editForm} onSubmit={handleSubmit}>
-          <button
-            className={cssModules.backBtn}
-            onClick={() => navigate("/profile")}
-          >
-            Back
-          </button>
-
-          <h1>Edit Profile</h1>
+          <h1>Edit Profile Pic</h1>
 
           {success ? (
             <h3
               style={{
+                width: "100%",
                 color: "green",
                 background: "#c5fce5",
                 textAlign: "center",
@@ -129,7 +107,7 @@ function EditProfile() {
                 fontFamily: "avenirs",
               }}
             >
-              Edit Profile Success
+              Update Profile Picture Success
             </h3>
           ) : (
             <></>
@@ -138,6 +116,7 @@ function EditProfile() {
           {fail ? (
             <h3
               style={{
+                width: "100%",
                 color: "red",
                 background: "#e0cecc",
                 textAlign: "center",
@@ -146,11 +125,18 @@ function EditProfile() {
                 fontFamily: "avenirs",
               }}
             >
-              Edit Profile Failed
+              Update Profile Picture Failed
             </h3>
           ) : (
             <></>
           )}
+
+          <div className={cssModules.imgContainer} onClick={pic}>
+            {preview && <img src={preview} alt="Preview" />}
+            <div className={cssModules.addText}>
+              <h1>Add Image Here</h1>
+            </div>
+          </div>
 
           <input
             type="file"
@@ -159,28 +145,21 @@ function EditProfile() {
             onChange={handleChange}
             hidden
           />
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" onChange={handleChange} value={name} />
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="number"
-            name="phone"
-            onChange={handleChange}
-            value={phone}
-          />
-          <button type="submit" className={cssModules.saveBtn}>
-            SAVE
-          </button>
-        </form>
-        <div className={cssModules.imgContainer} onClick={pic}>
-          {preview && <img src={preview} alt="Preview" />}
-          <div className={cssModules.addText}>
-            <h1>Add Image Here</h1>
+          <div className={cssModules.btnWrapper}>
+            <button
+              className={cssModules.backBtn}
+              onClick={() => navigate("/profile")}
+            >
+              CANCEL
+            </button>
+            <button type="submit" className={cssModules.saveBtn}>
+              SAVE
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
 }
 
-export default EditProfile;
+export default EditProfilePic;

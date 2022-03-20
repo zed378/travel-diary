@@ -8,6 +8,7 @@ import DiaryCard from "../component/card/DiaryCard";
 
 // import assets
 import nodiary from "../assets/img/nodiary.svg";
+import edit from "../assets/img/edits.svg";
 import cssModules from "../assets/css/Profile.module.css";
 
 // import config
@@ -52,10 +53,17 @@ function Profile() {
       <div className={cssModules.imgContainer}>
         <div className={cssModules.imgWrapper}>
           <img src={user.photo} alt="Profile" />
+          <div
+            className={cssModules.editBtn}
+            onClick={() => navigate(`/profile-pic-edit/${user.id}`)}
+          >
+            <img src={edit} alt="Edit" />
+            <p>Change Pic</p>
+          </div>
         </div>
         <h2>{user.name}</h2>
         <p>{user.email}</p>
-        <button onClick={() => navigate(`/profile-edit/${user.id}`)}>
+        <button onClick={() => navigate(`/profile-info-edit/${user.id}`)}>
           Edit
         </button>
       </div>

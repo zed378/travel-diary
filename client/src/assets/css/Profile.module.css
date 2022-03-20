@@ -11,6 +11,7 @@
 
 .imgContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,6 +32,73 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   margin-bottom: 1rem;
+}
+
+.editBtn {
+  width: 175px;
+  height: 175px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.editBtn img {
+  display: none;
+}
+
+.editBtn p {
+  display: none;
+}
+
+.editBtn:hover img {
+  display: flex;
+}
+
+.editBtn:hover p {
+  display: flex;
+}
+
+.editBtn:hover {
+  height: 175px;
+  width: 175px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  background: gray;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  outline: 3px dashed #2e86de;
+  color: white;
+}
+
+.editBtn > img {
+  height: 1.75rem;
 }
 
 .imgWrapper > img {

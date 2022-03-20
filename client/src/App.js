@@ -13,10 +13,12 @@ import NavLog from "./component/nav/NavLog";
 import {
   Home,
   Profile,
-  EditProfile,
+  EditProfilePic,
+  EditProfileInfo,
   Bookmark,
   DetailDiary,
   AddDiary,
+  EditDiaryPic,
   EditDiary,
 } from "./pages/";
 import PrivateRoute from "./context/PrivateRoute";
@@ -68,12 +70,26 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/detail-diary/:id" element={<DetailDiary />} />
-        <Route exact path="/profile-edit/:id" element={<EditProfile />} />
+        <Route
+          exact
+          path="/profile-pic-edit/:id"
+          element={<EditProfilePic />}
+        />
+        <Route
+          exact
+          path="/profile-info-edit/:id"
+          element={<EditProfileInfo />}
+        />
         <Route exact path="/" element={<PrivateRoute />}>
           <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/bookmark" element={<Bookmark />} />
           <Route exact path="/write" element={<AddDiary />} />
           <Route exact path="/write-edit/:idPost" element={<EditDiary />} />
+          <Route
+            exact
+            path="/write-pic-edit/:idPost"
+            element={<EditDiaryPic />}
+          />
         </Route>
       </Routes>
     </Router>

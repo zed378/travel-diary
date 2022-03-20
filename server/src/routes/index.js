@@ -14,12 +14,13 @@ const {
   getPosts,
   getPost,
   getUserPost,
-  editPost,
+  editPostPic,
+  updatePost,
   delPost,
 } = require("../controllers/post");
 
 // import user controller
-const { editUser, getUser } = require("../controllers/user");
+const { editUserPic, getUser, updateProfile } = require("../controllers/user");
 
 // import bookmark controller
 const { setMark, getMark, getAllMark } = require("../controllers/bookmark");
@@ -37,12 +38,14 @@ router.post("/post", auth, postImg("thumbnail"), addPost);
 router.get("/posts", getPosts);
 router.get("/post/:id", getPost);
 router.get("/userpost/:id", getUserPost);
-router.patch("/post/:id", auth, postImg("thumbnail"), editPost);
+router.patch("/post/:id", auth, postImg("thumbnail"), editPostPic);
+router.patch("/post-edit/:id", auth, updatePost);
 router.delete("/post/:id", auth, delPost);
 
 // define user routes
-router.get("/user/:id", getUser);
-router.patch("/user/:id", auth, profileImg("photo"), editUser);
+router.get("/user/:id", auth, getUser);
+router.patch("/user/:id", auth, profileImg("photo"), editUserPic);
+router.patch("/user-edit/:id", auth, updateProfile);
 
 // define bookmark routes
 router.get("/mark/:postId", auth, setMark);

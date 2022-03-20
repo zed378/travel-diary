@@ -31,14 +31,12 @@ exports.getUser = async (req, res) => {
   }
 };
 
-exports.editUser = async (req, res) => {
+exports.editUserPic = async (req, res) => {
   try {
     const { id } = req.params;
 
     const data = {
-      name: req.body.name,
       photo: req.file.filename,
-      phone: req.body.phone,
     };
 
     let checkUser = await user.findOne({
@@ -47,7 +45,8 @@ exports.editUser = async (req, res) => {
 
     if (!checkUser) {
       return res.send({
-        message: "Failed to delete",
+        status: "Failed",
+        message: "Failed to delete Image",
       });
     } else {
       delImg(checkUser.photo);
@@ -59,6 +58,32 @@ exports.editUser = async (req, res) => {
 
     res.send({
       status: "Success",
+      message: "Edit Profile Success",
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updateProfile = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const data = {
+      name: req.body.name,
+      phone: req.body.phone,
+    };
+
+    await user.update(data, {
+      where: { id },
+    });
+
+    res.send({
+      status: "Success",
+      message: "Edit Profile Success",
       data,
     });
   } catch (error) {

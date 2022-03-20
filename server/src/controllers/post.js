@@ -169,13 +169,11 @@ exports.getUserPost = async (req, res) => {
   }
 };
 
-exports.editPost = async (req, res) => {
+exports.editPostPic = async (req, res) => {
   try {
     const { id } = req.params;
 
     const data = {
-      title: req.body.title,
-      content: req.body.content,
       thumbnail: req.file.filename,
     };
 
@@ -199,6 +197,32 @@ exports.editPost = async (req, res) => {
 
     res.send({
       status: "Success",
+      data,
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.updatePost = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const data = {
+      title: req.body.title,
+      content: req.body.content,
+    };
+
+    await post.update(data, {
+      where: { id },
+    });
+
+    res.send({
+      status: "Success",
+      message: "Edit Diary Success",
       data,
     });
   } catch (error) {

@@ -65,7 +65,7 @@
   background: #dfdfdf;
 }
 
-form > button {
+.regCard > form > button {
   color: white;
   background: #2e86de;
   margin-top: 0.5rem;
@@ -165,7 +165,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -266,7 +266,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -367,7 +367,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -468,7 +468,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -569,7 +569,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -670,7 +670,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -771,7 +771,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;
@@ -872,7 +872,7 @@ form > button {
     background: #dfdfdf;
   }
 
-  form > button {
+  .regCard > form > button {
     color: white;
     background: #2e86de;
     margin-top: 0.5rem;

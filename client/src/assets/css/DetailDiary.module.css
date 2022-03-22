@@ -1,7 +1,7 @@
 .diaryContainer {
   width: 100%;
   box-sizing: border-box;
-  padding: 50px 125px;
+  padding: 50px 205px;
 }
 .diaryContainer > h1 {
   margin: 0 0 1rem 0;
@@ -32,7 +32,7 @@
   display: inline-block;
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 700px;
   overflow: hidden;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -111,4 +111,940 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 125px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 1rem 0;
+    font-size: 3rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 1.5rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 1.5rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin-bottom: 3rem;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1.75rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h1 {
+    font-size: 3rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.75rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2.5rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h4 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h5 {
+    font-size: 2.15rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .contentText > h6 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 125px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: 2.5rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.25rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 1.25rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 1.25rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1.35rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.5rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 75px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: 2.5rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 1rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 1rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 525px;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 75px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 2rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 475px;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.85rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 425px;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 30px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.85rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 0.85rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 25px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.75rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 0.75rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 0.75rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .diaryContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+  }
+  .diaryContainer > h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.75rem;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .infoDate {
+    color: #3b97d3;
+    font-size: 0.65rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .infoUser {
+    font-size: 0.65rem;
+    font-family: avenirs;
+    margin: 0;
+  }
+
+  .imgContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 215px;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-bottom: 0;
+  }
+
+  .imgContainer > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+  }
+
+  .contentText {
+    font-family: avenirs;
+  }
+
+  .contentText > p {
+    font-size: 1rem;
+    text-align: justify;
+    color: #505050;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h1 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h2 {
+    font-size: 2.25rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h3 {
+    font-size: 2rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h4 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h5 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .contentText > h6 {
+    font-size: 1.75rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+
+  .backBtn {
+    background: #3b97d3;
+    margin-bottom: 1rem;
+    color: white;
+    height: 2rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: avenirs;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
 }

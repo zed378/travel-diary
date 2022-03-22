@@ -111,7 +111,10 @@ form > button {
     height: auto;
     padding: 1rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -130,40 +133,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 2rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .regCard > form > input {
+    height: 2.5rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
+    background: #2e86de;
+    margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2.5rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -173,8 +181,8 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
@@ -183,6 +191,10 @@ form > button {
     font-family: avenirs;
     font-size: 1rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -196,11 +208,14 @@ form > button {
   }
 
   .regCard {
-    width: 30%;
+    width: 25%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -219,40 +234,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.75rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 2.15rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.35rem;
+    font-size: 1.15rem;
+  }
+
+  .regCard > form > input {
+    height: 2.25rem;
+    margin-bottom: 0.85rem;
     font-size: 1rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
+    background: #2e86de;
+    margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2.25rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -262,16 +282,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -285,11 +309,14 @@ form > button {
   }
 
   .regCard {
-    width: 40%;
+    width: 30%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -308,40 +335,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
+    background: #2e86de;
+    margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -351,16 +383,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -374,11 +410,14 @@ form > button {
   }
 
   .regCard {
-    width: 45%;
+    width: 35%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -397,40 +436,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
-    font-size: 1rem;
+    background: #2e86de;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -440,16 +484,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -463,11 +511,14 @@ form > button {
   }
 
   .regCard {
-    width: 50%;
+    width: 45%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -486,40 +537,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
-    font-size: 1rem;
+    background: #2e86de;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -529,16 +585,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -552,11 +612,14 @@ form > button {
   }
 
   .regCard {
-    width: 70%;
+    width: 55%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -575,40 +638,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
-    font-size: 1rem;
+    background: #2e86de;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -618,16 +686,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -641,11 +713,14 @@ form > button {
   }
 
   .regCard {
-    width: 85%;
+    width: 80%;
     height: auto;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -664,40 +739,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 2rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
 
-  form > input,
-  select {
-    height: 3rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
-    font-size: 1rem;
+    background: #2e86de;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -707,16 +787,20 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }
 
@@ -730,11 +814,14 @@ form > button {
   }
 
   .regCard {
-    width: 95%;
+    width: 90%;
     height: auto;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.85rem;
     box-sizing: border-box;
-    background: white;
+    background-image: url("../img/authbg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -753,40 +840,45 @@ form > button {
   }
 
   .regCard > h1 {
-    margin: 0 0 1.5rem 0;
-    color: #bd0707;
+    margin: 1rem 0 1.25rem 0;
     font-family: product;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
+    text-align: center;
   }
 
   .regCard > form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
   }
 
-  form > input,
-  select {
-    height: 2.5rem;
+  .regCard > form > label {
+    margin-bottom: 0.25rem;
     font-size: 1rem;
+  }
+
+  .regCard > form > input {
+    height: 2rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.85rem;
     box-sizing: border-box;
     padding: 0 8px;
-    border: #bd0707 solid 2px;
+    border: #7e7e7e solid 1px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: #e0c8c840;
+    background: #dfdfdf;
   }
 
   form > button {
     color: white;
-    background: #bd0707;
-    font-size: 1rem;
+    background: #2e86de;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    height: 3rem;
+    height: 2rem;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -796,15 +888,19 @@ form > button {
     -o-border-radius: 5px;
   }
 
-  form > button:hover {
-    background: #630303;
+  .regCard > form > button:hover {
+    background: #1059a1;
   }
 
   .regCard > p {
     text-align: center;
     cursor: pointer;
     font-family: avenirs;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin: 20px 0;
+  }
+
+  .regCard > p:hover {
+    text-decoration: underline;
   }
 }

@@ -7,7 +7,7 @@ import { UserContext } from "../context/UserContext";
 
 // import assets
 import nomark from "../assets/img/nomark.svg";
-import cssModules from "../assets/css/Bookmark.module.css";
+import cssModules from "../assets/css/Home.module.css";
 
 import { API } from "../config/api";
 
@@ -30,8 +30,8 @@ function Bookmark() {
   }, []);
 
   return (
-    <div className={cssModules.bookmarkContainer}>
-      <h1>Bookmark</h1>
+    <div className={cssModules.homeContainer}>
+      <h1 className={cssModules.bookmarkTitle}>Bookmark</h1>
 
       <div className={cssModules.cardContainer}>
         {/* card */}

@@ -2,3 +2,17 @@
   height: 400px;
   font-family: roboto;
 }
+
+@media only screen and (max-width: 1024px) {
+  .ck-rounded-corners {
+    height: 300px;
+    font-family: roboto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ck-rounded-corners {
+    height: 250px;
+    font-family: roboto;
+  }
+}

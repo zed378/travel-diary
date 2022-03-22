@@ -75,8 +75,8 @@ hr {
     width: 15%;
     background: white;
     position: absolute;
-    top: 145px;
-    right: 62.5px;
+    top: 135px;
+    right: 97.5px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -104,17 +104,29 @@ hr {
     align-items: center;
     gap: 20px;
     box-sizing: border-box;
-    padding: 1rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2.5rem;
+  .imgWrapper {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 2rem;
   }
 }
 
@@ -130,8 +142,8 @@ hr {
     width: 15%;
     background: white;
     position: absolute;
-    top: 145px;
-    right: 40px;
+    top: 122.5px;
+    right: 69px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -157,19 +169,31 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 1rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2.5rem;
+  .imgWrapper {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 2rem;
   }
 }
 
@@ -185,8 +209,8 @@ hr {
     width: 17.5%;
     background: white;
     position: absolute;
-    top: 130px;
-    right: 62.5px;
+    top: 122.5px;
+    right: 69px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -212,19 +236,32 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.25rem;
+    margin: 0;
+    font-size: 0.85rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2rem;
+  .imgWrapper {
+    height: 1.75rem;
+    width: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.75rem;
   }
 }
 
@@ -240,7 +277,7 @@ hr {
     width: 20%;
     background: white;
     position: absolute;
-    top: 112.5px;
+    top: 115px;
     right: 42.5px;
     z-index: 99;
     padding: 0.5rem 0;
@@ -254,10 +291,10 @@ hr {
 
   .triangle {
     position: absolute;
-    top: -25px;
-    right: 15px;
-    height: 30px;
-    width: 30px;
+    top: -30px;
+    right: 10px;
+    height: 35px;
+    width: 35px;
   }
 
   hr {
@@ -267,19 +304,32 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.25rem;
+    margin: 0;
+    font-size: 0.85rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2rem;
+  .imgWrapper {
+    height: 1.75rem;
+    width: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.75rem;
   }
 }
 
@@ -292,11 +342,11 @@ hr {
   }
 
   .dropdown {
-    width: 22.5%;
+    width: 20%;
     background: white;
     position: absolute;
-    top: 107.5px;
-    right: 45px;
+    top: 105px;
+    right: 27.5px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -310,7 +360,7 @@ hr {
   .triangle {
     position: absolute;
     top: -25px;
-    right: 15px;
+    right: 10px;
     height: 30px;
     width: 30px;
   }
@@ -322,19 +372,32 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.25rem;
+    margin: 0;
+    font-size: 0.75rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2rem;
+  .imgWrapper {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.5rem;
   }
 }
 
@@ -347,11 +410,11 @@ hr {
   }
 
   .dropdown {
-    width: 30%;
+    width: 25%;
     background: white;
     position: absolute;
-    top: 105px;
-    right: 32.5px;
+    top: 87.5px;
+    right: 22.5px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -377,19 +440,32 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.25rem;
+    margin: 0;
+    font-size: 0.7rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 2rem;
+  .imgWrapper {
+    height: 1.25rem;
+    width: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.25rem;
   }
 }
 
@@ -402,11 +478,11 @@ hr {
   }
 
   .dropdown {
-    width: 32.5%;
+    width: 35%;
     background: white;
     position: absolute;
-    top: 102.5px;
-    right: 35px;
+    top: 77.5px;
+    right: 20px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -419,7 +495,7 @@ hr {
 
   .triangle {
     position: absolute;
-    top: -22.5px;
+    top: -20px;
     right: 10px;
     height: 25px;
     width: 25px;
@@ -432,19 +508,32 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.15rem;
+    margin: 0;
+    font-size: 0.85rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 1.75rem;
+  .imgWrapper {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.5rem;
   }
 }
 
@@ -457,11 +546,11 @@ hr {
   }
 
   .dropdown {
-    width: 42.5%;
+    width: 45%;
     background: white;
     position: absolute;
-    top: 90px;
-    right: 35px;
+    top: 74px;
+    right: 12.5px;
     z-index: 99;
     padding: 0.5rem 0;
     border-radius: 10px;
@@ -474,7 +563,7 @@ hr {
 
   .triangle {
     position: absolute;
-    top: -22.5px;
+    top: -20px;
     right: 10px;
     height: 25px;
     width: 25px;
@@ -487,18 +576,31 @@ hr {
   .menuOption {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12.5px;
     box-sizing: border-box;
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
   }
 
+  .menuOption:hover {
+    background: rgb(211, 211, 211);
+  }
+
   .menuOption > p {
-    font-size: 1.15rem;
+    margin: 0;
+    font-size: 0.85rem;
     font-weight: 900;
   }
 
-  .menuOption > img {
-    height: 1.75rem;
+  .imgWrapper {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgWrapper > img {
+    height: 1.5rem;
   }
 }

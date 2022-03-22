@@ -7,11 +7,11 @@ This project created for us that want to capture and eternalize the moment using
 This project built for screen with width:
 
 - 1920p
-- 1440p (soon)
-- 1366p (soon)
-- 1024p (soon)
-- 900p (soon)
-- 768p (soon)
-- 600p (soon)
-- 480p (soon)
-- 360p (soon)
+- 1440p
+- 1366p
+- 1024p
+- 900p
+- 768p
+- 600p
+- 480p
+- 360p

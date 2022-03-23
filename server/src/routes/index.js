@@ -28,6 +28,9 @@ const { setMark, getMark, getAllMark } = require("../controllers/bookmark");
 // import like controller
 const { setLike, getLike, getAllLike } = require("../controllers/like");
 
+// import comment controller
+const { addComment, getAllComment } = require("../controllers/comment");
+
 // define auth routes
 router.post("/register", register);
 router.post("/login", login);
@@ -56,5 +59,9 @@ router.get("/getmark/:userId/:postId", auth, getMark);
 router.get("/set-like/:userId/:postId", auth, setLike);
 router.get("/like/:id", auth, getLike);
 router.get("/get-like/:id", getAllLike);
+
+// define comment routes
+router.post("/comment/:userId/:postId", auth, addComment);
+router.get("/comments/:postId", getAllComment);
 
 module.exports = router;

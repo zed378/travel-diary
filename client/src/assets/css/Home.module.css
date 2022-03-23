@@ -177,6 +177,7 @@
 .cardDesc > h2 {
   margin: 0 0 5px 0;
   overflow: hidden;
+  font-family: roboto;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -272,6 +273,23 @@
 
 .nopost > img {
   width: 35%;
+}
+
+.nomark {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nomark > img {
+  width: 35%;
+}
+
+.nomark > h1 {
+  margin: 0.5rem 0 0 0;
+  font-size: 2.5rem;
+  color: #2e86de;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1110,6 +1128,23 @@
   .nopost > img {
     width: 55%;
   }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 40%;
+  }
+
+  .nomark > h1 {
+    margin: 0.25rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1385,6 +1420,23 @@
 
   .nopost > img {
     width: 55%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 45%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
   }
 }
 
@@ -1666,6 +1718,23 @@
 
   .nopost > img {
     width: 65%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 50%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
   }
 }
 
@@ -1955,6 +2024,22 @@
   .nopost > img {
     width: 75%;
   }
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 75%;
+  }
+
+  .nomark > h1 {
+    margin: 0.25rem 0 0 0;
+    font-size: 2rem;
+    color: #2e86de;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -2237,6 +2322,23 @@
   .nopost > img {
     width: 100%;
   }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 100%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2.5rem;
+    color: #2e86de;
+  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -2518,5 +2620,22 @@
 
   .nopost > img {
     width: 100%;
+  }
+
+  .nomark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nomark > img {
+    width: 100%;
+  }
+
+  .nomark > h1 {
+    margin: 0.5rem 0 0 0;
+    font-size: 2rem;
+    color: #2e86de;
   }
 }

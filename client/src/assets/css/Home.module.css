@@ -185,7 +185,7 @@
 }
 
 .cardDesc > p {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   font-size: 0.85rem;
   font-family: avenirs;
   color: gray;
@@ -193,6 +193,8 @@
 
 .cardDesc > .h4 {
   margin: 0;
+  line-height: 1.2;
+  height: 5.8rem;
   font-size: 1rem;
   font-family: roboto;
   font-weight: 400;
@@ -201,7 +203,6 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
-  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -463,7 +464,7 @@
   }
 
   .cardDesc > p {
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
     font-size: 0.75rem;
     font-family: avenirs;
     color: gray;
@@ -471,6 +472,8 @@
 
   .cardDesc > .h4 {
     margin: 0;
+    line-height: 1.2;
+    height: 5rem;
     font-size: 0.85rem;
     font-family: roboto;
     font-weight: 400;
@@ -750,6 +753,8 @@
 
   .cardDesc > .h4 {
     margin: 0;
+    line-height: 1.2;
+    height: 4.5rem;
     font-size: 0.75rem;
     font-family: roboto;
     font-weight: 400;
@@ -1024,6 +1029,8 @@
 
   .cardDesc > .h4 {
     margin: 0;
+    line-height: 1.2;
+    height: 4.5rem;
     font-size: 0.75rem;
     font-family: roboto;
     font-weight: 400;
@@ -1299,6 +1306,8 @@
   .cardDesc > .h4 {
     margin: 0;
     font-size: 0.7rem;
+    line-height: 1.2;
+    height: 4rem;
     font-family: roboto;
     font-weight: 400;
     color: #6c6c6c;
@@ -1578,6 +1587,8 @@
   .cardDesc > .h4 {
     margin: 0;
     font-size: 0.65rem;
+    line-height: 1.2;
+    height: 3.8rem;
     font-family: roboto;
     font-weight: 400;
     color: #6c6c6c;
@@ -1864,6 +1875,8 @@
   .cardDesc > .h4 {
     margin: 0;
     font-size: 0.65rem;
+    line-height: 1.2;
+    height: 3.8rem;
     font-family: roboto;
     font-weight: 400;
     color: #6c6c6c;
@@ -2144,6 +2157,8 @@
   .cardDesc > .h4 {
     margin: 0;
     font-size: 0.6rem;
+    line-height: 1.2;
+    height: 3.5rem;
     font-family: roboto;
     font-weight: 400;
     color: #6c6c6c;
@@ -2424,6 +2439,8 @@
   .cardDesc > .h4 {
     margin: 0;
     font-size: 0.75rem;
+    line-height: 1.2;
+    height: 4.3rem;
     font-family: roboto;
     font-weight: 400;
     color: #6c6c6c;

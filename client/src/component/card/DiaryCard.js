@@ -9,6 +9,7 @@ import bookmark from "../../assets/img/bookmark.svg";
 import bookmarked from "../../assets/img/bookmarked.svg";
 import love from "../../assets/img/love.svg";
 import loved from "../../assets/img/loved.svg";
+import comment from "../../assets/img/comment.svg";
 import edit from "../../assets/img/edit.svg";
 import editimg from "../../assets/img/editimg.svg";
 import trash from "../../assets/img/trash.svg";
@@ -29,6 +30,7 @@ function DiaryCard({ item, press }) {
   const [marked, setMarked] = useState([]);
   const [like, setLike] = useState([]);
   const [allLike, setAllLike] = useState([]);
+  const [allComment, setAllComment] = useState([]);
 
   const setMark = async (id) => {
     try {
@@ -83,6 +85,16 @@ function DiaryCard({ item, press }) {
     }
   };
 
+  const getAllComment = async () => {
+    try {
+      const response = await API.get(`/comments/${item.id}`);
+
+      setAllComment(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const delModal = (id, name) => {
     const modal = (
       <div className={cssModules.delModal}>
@@ -123,6 +135,7 @@ function DiaryCard({ item, press }) {
     getmark();
     getLike();
     getAllLike();
+    getAllComment();
   }, []);
 
   return (
@@ -186,15 +199,18 @@ function DiaryCard({ item, press }) {
         ) : (
           <></>
         )}
+        {/* end of edit button */}
 
+        {/* thumbnail */}
         <div
           className={cssModules.thumbnail}
           onClick={() => navigate(`/detail-diary/${item.id}`)}
         >
           <img src={item.thumbnail} alt="Preview" />
         </div>
+        {/* end of thumbnail */}
 
-        {/* begin like button */}
+        {/* begin like button and comment counter */}
         <div className={cssModules.love}>
           <div
             className={cssModules.loveWrapper}
@@ -230,8 +246,23 @@ function DiaryCard({ item, press }) {
           </div>
 
           {allLike.length === 0 ? <p>Like</p> : <p>{allLike.length} Likes</p>}
+
+          <div
+            className={cssModules.loveWrapper}
+            onClick={() => navigate(`/detail-diary/${item.id}`)}
+          >
+            <img src={comment} alt={comment} />
+          </div>
+
+          {allComment.length === 0 ? (
+            <p onClick={() => navigate(`/detail-diary/${item.id}`)}>Comment</p>
+          ) : (
+            <p onClick={() => navigate(`/detail-diary/${item.id}`)}>
+              {allComment.length} Comments
+            </p>
+          )}
         </div>
-        {/* end of like button */}
+        {/* end of like button and comment counter */}
 
         <div
           className={cssModules.cardDesc}

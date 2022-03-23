@@ -40,8 +40,6 @@ function AddDiary() {
         e.target.type === "file" ? e.target.files : e.target.value,
     });
 
-    console.log(form.title);
-
     if (e.target.type === "file") {
       let url = URL.createObjectURL(e.target.files[0]);
       setPreview(url);

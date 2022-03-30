@@ -48,6 +48,3 @@ This project built for screen with width:
 - Type `npm start` to start client / front end
 - Wait until browser automatically open
 - Project ready to use
-
-### Operate Project
-- 

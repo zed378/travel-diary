@@ -7,10 +7,15 @@ import DOMPurify from "dompurify";
 // import assets
 import love from "../assets/img/love.svg";
 import comment from "../assets/img/comment.svg";
+import nocomments from "../assets/img/comments.svg";
 import dots from "../assets/img/dots.svg";
 import edit from "../assets/img/editg.svg";
 import trash from "../assets/img/trash.svg";
+import close from "../assets/img/close.svg";
 import cssModules from "../assets/css/DetailDiary.module.css";
+
+// import component
+import EditCommentModal from "../component/card/EditCommentModal";
 
 // import config
 import { API } from "../config/api";
@@ -25,6 +30,7 @@ function DetailDiary() {
   const [diary, setDiary] = useState([]);
   const [likes, setLikes] = useState([]);
   const [comments, setComments] = useState([]);
+  const [modal, setModal] = useState(null);
 
   const [form, setForm] = useState({
     comment: "",
@@ -68,6 +74,43 @@ function DetailDiary() {
     }
   };
 
+  const setCommentMenu = async (commentId) => {
+    try {
+      await API.get(`/comment-menu/${commentId}`);
+
+      getComments();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const modalEdit = (commentId, contents) => {
+    setCommentMenu(commentId);
+
+    const modal = (
+      <EditCommentModal
+        press={() => {
+          setModal(null);
+          getComments();
+        }}
+        param={commentId}
+        val={contents}
+      />
+    );
+
+    setModal(modal);
+    console.log(form);
+  };
+
+  const delComment = async (commentId) => {
+    try {
+      await API.delete(`/comment/${commentId}`);
+      getComments();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -104,6 +147,7 @@ function DetailDiary() {
 
   return (
     <>
+      {modal ? modal : <></>}
       <div className={cssModules.diaryContainer}>
         <button className={cssModules.backBtn} onClick={() => navigate("/")}>
           {" "}
@@ -143,35 +187,90 @@ function DetailDiary() {
 
       <div className={cssModules.commentSection}>
         <h1>All Comments</h1>
-        <form onSubmit={handleSubmit} className={cssModules.commentPost}>
-          <textarea
-            name="comment"
-            placeholder="Tell me your feeling about my diary"
-            onChange={handleChange}
-            value={form.comment}
-          ></textarea>
-          <button type="submit">Post Comment</button>
-        </form>
+        {state.isLogin ? (
+          <form onSubmit={handleSubmit} className={cssModules.commentPost}>
+            <textarea
+              name="comment"
+              placeholder="Tell me your thought about my diary"
+              onChange={handleChange}
+              value={form.comment}
+            ></textarea>
+            <button type="submit">Post Comment</button>
+          </form>
+        ) : (
+          <></>
+        )}
 
+        {/* comment */}
         <div className={cssModules.commentContainer}>
-          {comments.map((item) => (
-            <div className={cssModules.commentData}>
-              <div className={cssModules.commentUserPic}>
-                <img src={path + item.user.photo} alt={item.user.photo} />
-              </div>
+          {comments.length !== 0 ? (
+            <>
+              {comments.map((item) => (
+                <div className={cssModules.commentData}>
+                  <div className={cssModules.commentUserPic}>
+                    <img src={path + item.user.photo} alt={item.user.photo} />
+                  </div>
 
-              <div className={cssModules.commentUserInfo}>
-                <h4>
-                  {item.user.name} <img src={dots} alt={dots} />
-                </h4>
-                <h6>
-                  {dateFormat(item.createdAt, "dddd, d mmmm, yyyy, HH:MM")} WIB
-                </h6>
-                <p>{item.comment}</p>
-              </div>
+                  <div className={cssModules.commentUserInfo}>
+                    <h4>
+                      {item.user.name}{" "}
+                      {state.isLogin && state.user.id === item.user.id ? (
+                        <>
+                          <img
+                            src={dots}
+                            alt={dots}
+                            onClick={() => setCommentMenu(item.id)}
+                          />
+
+                          {item.menuClick === 1 ? (
+                            <div className={cssModules.menuContainer}>
+                              <div
+                                className={cssModules.menuOption}
+                                onClick={() => modalEdit(item.id, item.comment)}
+                              >
+                                <img src={edit} alt={edit} />
+                                <p>Edit</p>
+                              </div>
+                              <div
+                                className={cssModules.menuOption}
+                                onClick={() => delComment(item.id)}
+                              >
+                                <img src={trash} alt={trash} />
+                                <p>Delete</p>
+                              </div>
+                              <div
+                                className={cssModules.menuOption}
+                                onClick={() => setCommentMenu(item.id)}
+                              >
+                                <img src={close} alt={close} />
+                                <p>Close</p>
+                              </div>
+                            </div>
+                          ) : (
+                            <></>
+                          )}
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </h4>
+                    <h6>
+                      {dateFormat(item.createdAt, "dddd, d mmmm, yyyy, HH:MM")}{" "}
+                      WIB
+                    </h6>
+                    <p>{item.comment}</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          ) : (
+            <div className={cssModules.noComment}>
+              <h1>No Comment</h1>
+              <img src={nocomments} alt={nocomments} />
             </div>
-          ))}
+          )}
         </div>
+        {/* end of comment */}
       </div>
     </>
   );

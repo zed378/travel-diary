@@ -36,14 +36,7 @@ exports.getAllComment = async (req, res) => {
           as: "user",
 
           attributes: {
-            exclude: [
-              "id",
-              "email",
-              "password",
-              "phone",
-              "createdAt",
-              "updatedAt",
-            ],
+            exclude: ["email", "password", "phone", "createdAt", "updatedAt"],
           },
         },
       ],
@@ -58,6 +51,78 @@ exports.getAllComment = async (req, res) => {
     res.send({
       status: "Success",
       data,
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.setMenu = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const getStatus = await comment.findOne({
+      where: { id },
+    });
+
+    if (getStatus.menuClick === 0) {
+      await comment.update(
+        { menuClick: 1 },
+        {
+          where: { id },
+        }
+      );
+
+      res.send({
+        status: "Success Show Comment Menu",
+      });
+    } else {
+      await comment.update(
+        { menuClick: 0 },
+        {
+          where: { id },
+        }
+      );
+
+      res.send({
+        status: "Success UnShow Comment Menu",
+      });
+    }
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.editsComment = async (req, res) => {
+  try {
+    const { id, content } = req.params;
+
+    await comment.update({ comment: content }, { where: { id } });
+
+    res.send({
+      status: "Success Update Comment",
+    });
+  } catch (error) {
+    res.send({
+      status: "Failed",
+      message: "Server Error",
+    });
+  }
+};
+
+exports.delComment = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await comment.destroy({ where: { id } });
+
+    res.send({
+      status: "Success Delete Comment",
     });
   } catch (error) {
     res.send({

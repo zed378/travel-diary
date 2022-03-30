@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       userId: DataTypes.INTEGER,
       postId: DataTypes.INTEGER,
       comment: DataTypes.STRING,
+      menuClick: DataTypes.INTEGER,
     },
     {
       sequelize,

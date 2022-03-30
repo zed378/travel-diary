@@ -29,7 +29,13 @@ const { setMark, getMark, getAllMark } = require("../controllers/bookmark");
 const { setLike, getLike, getAllLike } = require("../controllers/like");
 
 // import comment controller
-const { addComment, getAllComment } = require("../controllers/comment");
+const {
+  addComment,
+  getAllComment,
+  setMenu,
+  editsComment,
+  delComment,
+} = require("../controllers/comment");
 
 // define auth routes
 router.post("/register", register);
@@ -63,5 +69,8 @@ router.get("/get-like/:id", getAllLike);
 // define comment routes
 router.post("/comment/:userId/:postId", auth, addComment);
 router.get("/comments/:postId", getAllComment);
+router.get("/comment-menu/:id", setMenu);
+router.patch("/comments/:id/:content", auth, editsComment);
+router.delete("/comment/:id", auth, delComment);
 
 module.exports = router;

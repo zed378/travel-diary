@@ -28,7 +28,7 @@ This project built for screen with width:
 - Delete Diary
 - Like Diary
 - Bookmark diary you loved
-- Comment (will add soon)
+- Comment
 
 ## How To Run This Project
 

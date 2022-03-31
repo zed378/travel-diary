@@ -143,6 +143,8 @@ exports.getUserPost = async (req, res) => {
         },
       ],
 
+      order: [["id", "DESC"]],
+
       attributes: {
         exclude: ["updatedAt"],
       },

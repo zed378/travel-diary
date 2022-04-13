@@ -29,15 +29,18 @@ This project built for screen with width:
 - Like Diary
 - Bookmark diary you loved
 - Comment
+- React Native App (Soon)
 
 ## How To Run This Project
 
 ### Requirement
+
 - This project created with ReactJS. So, you need install latest nodeJS first. You can download here: https://nodejs.org/en/download/
 - You need MySQL to store database. you can use XAMPP, MAMP, LAMP, etc. I prefer XAMPP and you can download here: https://www.apachefriends.org/download.html
 - You need browser that support JavaScript. I recommend Chrome or Edge for best experience.
 
 ### Init Project
+
 - Run MySQL first
 - Open server folder using right click then choose "Open in Integrated Terminal"
 - In terminal type `npm i` to install packages and dependencies

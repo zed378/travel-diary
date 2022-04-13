@@ -41,6 +41,7 @@ build/Release
 node_modules/
 client/node_modules/
 server/node_modules/
+MyDiary/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files

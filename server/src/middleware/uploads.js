@@ -89,7 +89,7 @@ exports.postImg = (product) => {
       // define allowed extension
       if (
         !file.originalname.match(
-          /\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF|webp|WEBP)$/
+          /\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF|webp|WEBP|svg|SVG)$/
         )
       ) {
         // if did not match allow extension
@@ -114,26 +114,5 @@ exports.postImg = (product) => {
     },
   }).single(product);
 
-  // set flash message
-  return (req, res, next) => {
-    upload(req, res, (err) => {
-      if (err) {
-        if (err.code == "LIMIT_FILE_SIZE") {
-          req.session.message = {
-            type: "red",
-            message: "Error, max file size 10MB",
-          };
-          return res.redirect(req.originalUrl);
-        }
-        req.session.message = {
-          type: "danger",
-          message: err,
-        };
-
-        req.flash("error", err);
-        return res.redirect(req.originalUrl);
-      }
-      return next();
-    });
-  };
+  return upload;
 };

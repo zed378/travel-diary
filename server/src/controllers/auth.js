@@ -80,10 +80,9 @@ exports.register = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log(error);
-    res.status(500).send({
+    res.status(400).send({
       status: "Failed",
-      message: "Server Error",
+      message: error,
     });
   }
 };
@@ -192,10 +191,9 @@ exports.checkAuth = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log(error);
     res.status({
-      status: "failed",
-      message: "Server Error",
+      status: "Failed",
+      message: error.message,
     });
   }
 };

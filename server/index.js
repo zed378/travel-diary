@@ -12,6 +12,9 @@ app.use("/uploads", express.static("uploads"));
 
 // add endpoint grouping
 app.use("/api/v1/", router);
+app.get("/", (req, res) => {
+  res.status(200).send("API is running");
+});
 
 const port = process.env.PORT;
 

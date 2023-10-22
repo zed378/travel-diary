@@ -149,6 +149,7 @@ exports.login = async (req, res) => {
         id: userExist.id,
         name: userExist.name,
         email: userExist.email,
+        photo: userExist.photo,
         token,
       },
     });

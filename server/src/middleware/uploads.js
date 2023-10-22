@@ -20,7 +20,7 @@ exports.profileImg = (profile) => {
       // define allowed extension
       if (
         !file.originalname.match(
-          /\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF|webp|WEBP)$/
+          /\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF|webp|WEBP|svg|SVG)$/
         )
       ) {
         // if did not match allow extension
